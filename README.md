@@ -5,6 +5,7 @@ GNOME Papers is a modern document viewer capable of displaying multiple and sing
 This repository contains a **Windows Native Port** of the application, branched from the official upstream GNOME GitLab repository.
 
 * **Upstream Source Repository**: [https://gitlab.gnome.org/GNOME/papers](https://gitlab.gnome.org/GNOME/papers)
+* **GitHub Port Repository**: [https://github.com/harshmishrahm01/papers-for-windows](https://github.com/harshmishrahm01/papers-for-windows)
 
 ---
 
