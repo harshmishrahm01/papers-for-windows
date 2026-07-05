@@ -43,3 +43,6 @@ Desktop.ini
 # Package bundling and installer directories
 dist/
 build-installer/
+setup.iss
+install.bat
+bundle.ps1

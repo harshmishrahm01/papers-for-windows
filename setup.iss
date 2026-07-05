@@ -10,6 +10,9 @@ SolidCompression=yes
 ArchitecturesAllowed=x64
 ArchitecturesInstallIn64BitMode=x64
 ChangesAssociations=yes
+AppPublisher=GNOME Papers Contributors
+AppPublisherURL=https://github.com/harshmishrahm01/papers-for-windows
+AppCopyright=Copyright (C) 2004-2026 GNOME Papers Contributors
 
 [Files]
 Source: "dist\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
