@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: evince\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/papers/issues/\n"
-"POT-Creation-Date: 2026-06-20 17:20+0000\n"
-"PO-Revision-Date: 2026-06-23 20:07+0200\n"
+"POT-Creation-Date: 2026-06-25 07:49+0000\n"
+"PO-Revision-Date: 2026-07-03 17:02+0200\n"
 "Last-Translator: Victoria Niedzielska <victorian@gnome.org>\n"
 "Language-Team: Polish <https://l10n.gnome.org/teams/pl/>\n"
 "Language: pl\n"
@@ -1292,7 +1292,7 @@ msgstr "_Otwórz odnośnik"
 
 #: shell/resources/pps-document-view.blp:1582
 msgid "Send an Email"
-msgstr "Wyślij wiadomość email"
+msgstr "Wyślij wiadomość e-mail"
 
 #: shell/resources/pps-document-view.blp:1588
 msgid "_Copy Link Address"
@@ -1300,7 +1300,7 @@ msgstr "_Skopiuj adres odnośnika"
 
 #: shell/resources/pps-document-view.blp:1594
 msgid "Copy Email Address"
-msgstr "Skopiuj adres email"
+msgstr "Skopiuj adres e-mail"
 
 #: shell/resources/pps-document-view.blp:1600
 msgid "_Go To"
