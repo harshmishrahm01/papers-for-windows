@@ -14,6 +14,7 @@
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 
+#include "pps-platform.h"
 #include "pps-document-forms.h"
 #include "pps-document-images.h"
 #include "pps-document-layers.h"
@@ -4181,12 +4182,12 @@ pps_view_button_press_event (GtkGestureClick *self,
 		return;
 
 	if (pps_document_model_get_annotation_editing_state (priv->model) & (PPS_ANNOTATION_EDITING_STATE_INK | PPS_ANNOTATION_EDITING_STATE_INSERT_TEXT)) {
-		gtk_gesture_set_state (GTK_GESTURE (self), GTK_EVENT_SEQUENCE_DENIED);
+		pps_platform_gesture_set_state (self, GTK_EVENT_SEQUENCE_DENIED);
 		return;
 	}
 
-	loc = GRAPHENE_POINT_INIT (x + gtk_adjustment_get_value (priv->hadjustment),
-	                           y + gtk_adjustment_get_value (priv->vadjustment));
+	loc = GRAPHENE_POINT_INIT (x + pps_platform_get_adjustment_value (priv->hadjustment),
+	                           y + pps_platform_get_adjustment_value (priv->vadjustment));
 
 	if (get_selection_page_range (view, &loc, &loc, &first_page, &last_page) &&
 	    first_page == last_page) {
@@ -4337,27 +4338,27 @@ middle_clicked_drag_update_cb (GtkGestureDrag *self,
 	gdouble delta_x, delta_y, delta_h_adjustment, delta_v_adjustment;
 	PpsViewPrivate *priv = GET_PRIVATE (view);
 
-	gtk_gesture_set_state (GTK_GESTURE (self), GTK_EVENT_SEQUENCE_CLAIMED);
+	pps_platform_gesture_set_state (self, GTK_EVENT_SEQUENCE_CLAIMED);
 
 	delta_x = offset_x - priv->drag_info.last_offset_x;
 	delta_y = offset_y - priv->drag_info.last_offset_y;
 
-	delta_h_adjustment = gtk_adjustment_get_page_size (priv->hadjustment) *
-	                     delta_x / gtk_widget_get_width (GTK_WIDGET (view));
-	delta_v_adjustment = gtk_adjustment_get_page_size (priv->vadjustment) *
-	                     delta_y / gtk_widget_get_height (GTK_WIDGET (view));
+	delta_h_adjustment = pps_platform_get_adjustment_page_size (priv->hadjustment) *
+	                     delta_x / pps_platform_get_widget_width (view);
+	delta_v_adjustment = pps_platform_get_adjustment_page_size (priv->vadjustment) *
+	                     delta_y / pps_platform_get_widget_height (view);
 
 	/* We will update the drag event's start position if
 	 * the adjustment value is changed, but only if the
 	 * change was not caused by this function. */
 
 	/* clamp scrolling to visible area */
-	gtk_adjustment_set_value (priv->hadjustment, MIN (gtk_adjustment_get_value (priv->hadjustment) - delta_h_adjustment,
-	                                                  gtk_adjustment_get_upper (priv->hadjustment) -
-	                                                      gtk_adjustment_get_page_size (priv->hadjustment)));
-	gtk_adjustment_set_value (priv->vadjustment, MIN (gtk_adjustment_get_value (priv->vadjustment) - delta_v_adjustment,
-	                                                  gtk_adjustment_get_upper (priv->vadjustment) -
-	                                                      gtk_adjustment_get_page_size (priv->vadjustment)));
+	pps_platform_adjustment_set_value (priv->hadjustment, MIN (pps_platform_get_adjustment_value (priv->hadjustment) - delta_h_adjustment,
+	                                                  pps_platform_get_adjustment_upper (priv->hadjustment) -
+	                                                      pps_platform_get_adjustment_page_size (priv->hadjustment)));
+	pps_platform_adjustment_set_value (priv->vadjustment, MIN (pps_platform_get_adjustment_value (priv->vadjustment) - delta_v_adjustment,
+	                                                  pps_platform_get_adjustment_upper (priv->vadjustment) -
+	                                                      pps_platform_get_adjustment_page_size (priv->vadjustment)));
 
 	priv->drag_info.last_offset_x = offset_x;
 	priv->drag_info.last_offset_y = offset_y;
@@ -4387,13 +4388,13 @@ pps_view_remove_all (PpsView *view)
 	   priv->link_preview.popover must be cleared */
 	pps_view_link_preview_popover_cleanup (view);
 
-	child = gtk_widget_get_first_child (GTK_WIDGET (view));
+	child = pps_platform_get_first_child (view);
 
 	while (child != NULL) {
-		GtkWidget *next = gtk_widget_get_next_sibling (child);
+		GtkWidget *next = pps_platform_get_next_sibling (child);
 
 		if (g_object_get_data (G_OBJECT (child), "pps-child"))
-			gtk_widget_unparent (child);
+			pps_platform_unparent (child);
 
 		child = next;
 	}
@@ -4416,7 +4417,7 @@ selection_scroll_timeout_cb (PpsView *view)
 	gint x, y, shift_x = 0, shift_y = 0;
 	GtkWidget *widget = GTK_WIDGET (view);
 	PpsViewPrivate *priv = GET_PRIVATE (view);
-	int widget_width = gtk_widget_get_width (widget);
+	int widget_width = pps_platform_get_widget_width (view);
 	int widget_height = gtk_widget_get_height (widget);
 
 	if (!pps_document_misc_get_pointer_position (widget, &x, &y))
@@ -4429,11 +4430,11 @@ selection_scroll_timeout_cb (PpsView *view)
 	}
 
 	if (shift_y)
-		gtk_adjustment_set_value (priv->vadjustment,
-		                          CLAMP (gtk_adjustment_get_value (priv->vadjustment) + shift_y,
-		                                 gtk_adjustment_get_lower (priv->vadjustment),
-		                                 gtk_adjustment_get_upper (priv->vadjustment) -
-		                                     gtk_adjustment_get_page_size (priv->vadjustment)));
+		pps_platform_adjustment_set_value (priv->vadjustment,
+		                          CLAMP (pps_platform_get_adjustment_value (priv->vadjustment) + shift_y,
+		                                 pps_platform_get_adjustment_lower (priv->vadjustment),
+		                                 pps_platform_get_adjustment_upper (priv->vadjustment) -
+		                                     pps_platform_get_adjustment_page_size (priv->vadjustment)));
 
 	if (x + SCROLL_THRESHOLD > widget_width) {
 		shift_x = (x + SCROLL_THRESHOLD - widget_width) / 2;
@@ -4442,11 +4443,11 @@ selection_scroll_timeout_cb (PpsView *view)
 	}
 
 	if (shift_x)
-		gtk_adjustment_set_value (priv->hadjustment,
-		                          CLAMP (gtk_adjustment_get_value (priv->hadjustment) + shift_x,
-		                                 gtk_adjustment_get_lower (priv->hadjustment),
-		                                 gtk_adjustment_get_upper (priv->hadjustment) -
-		                                     gtk_adjustment_get_page_size (priv->hadjustment)));
+		pps_platform_adjustment_set_value (priv->hadjustment,
+		                          CLAMP (pps_platform_get_adjustment_value (priv->hadjustment) + shift_x,
+		                                 pps_platform_get_adjustment_lower (priv->hadjustment),
+		                                 pps_platform_get_adjustment_upper (priv->hadjustment) -
+		                                     pps_platform_get_adjustment_page_size (priv->hadjustment)));
 
 	return G_SOURCE_CONTINUE;
 }
@@ -4501,23 +4502,21 @@ selection_begin_cb (GtkGestureDrag *selection_gesture,
 {
 	PpsViewPrivate *priv = GET_PRIVATE (view);
 	GtkEventController *controller = GTK_EVENT_CONTROLLER (selection_gesture);
-	GdkModifierType state = gtk_event_controller_get_current_event_state (controller);
+	guint state = pps_platform_get_event_state (controller);
 
 	/* Selection in rotated documents has never worked */
 	if (!PPS_IS_SELECTION (pps_document_model_get_document (priv->model)) || pps_document_model_get_rotation (priv->model) != 0) {
-		gtk_gesture_set_state (GTK_GESTURE (selection_gesture),
-		                       GTK_EVENT_SEQUENCE_DENIED);
+		pps_platform_gesture_set_state (selection_gesture, GTK_EVENT_SEQUENCE_DENIED);
 		return;
 	}
 
 	if (state & GDK_SHIFT_MASK) {
-		gtk_gesture_set_state (GTK_GESTURE (selection_gesture),
-		                       GTK_EVENT_SEQUENCE_CLAIMED);
+		pps_platform_gesture_set_state (selection_gesture, GTK_EVENT_SEQUENCE_CLAIMED);
 
 		selection_update_cb (selection_gesture, 0, 0, view);
 	} else {
-		priv->selection_info.start_x = x + gtk_adjustment_get_value (priv->hadjustment);
-		priv->selection_info.start_y = y + gtk_adjustment_get_value (priv->vadjustment);
+		priv->selection_info.start_x = x + pps_platform_get_adjustment_value (priv->hadjustment);
+		priv->selection_info.start_y = y + pps_platform_get_adjustment_value (priv->vadjustment);
 	}
 }
 
@@ -4548,7 +4547,7 @@ signing_update_cb (GtkGestureDrag *signing_gesture,
 
 	priv->signing_info.stop_x = priv->signing_info.start_x + offset_x;
 	priv->signing_info.stop_y = priv->signing_info.start_y + offset_y;
-	gtk_widget_queue_draw (GTK_WIDGET (view));
+	pps_platform_queue_draw (view);
 }
 
 static void
@@ -4584,9 +4583,9 @@ pps_view_motion_notify_event (GtkEventControllerMotion *controller,
                               PpsView *view)
 {
 	PpsViewPrivate *priv = GET_PRIVATE (view);
-	GdkModifierType modifier = gtk_event_controller_get_current_event_state (GTK_EVENT_CONTROLLER (controller));
+	guint state = pps_platform_get_event_state (controller);
 
-	if (!pps_document_model_get_document (priv->model) || (modifier & BUTTON_MODIFIER_MASK) != GDK_NO_MODIFIER_MASK)
+	if (!pps_document_model_get_document (priv->model) || (state & BUTTON_MODIFIER_MASK) != GDK_NO_MODIFIER_MASK)
 		return;
 
 	pps_view_handle_cursor_over_xy (view, x, y);
@@ -4638,11 +4637,11 @@ pps_view_button_release_event (GtkGestureClick *self,
                                PpsView *view)
 {
 	GtkEventController *controller = GTK_EVENT_CONTROLLER (self);
-	guint32 time = gtk_event_controller_get_current_event_time (controller);
+	guint32 time = pps_platform_get_event_time (controller);
 	PpsLink *link = NULL;
 	PpsViewPrivate *priv = GET_PRIVATE (view);
-	guint button = gtk_gesture_single_get_current_button (GTK_GESTURE_SINGLE (self));
-	GdkModifierType state = gtk_event_controller_get_current_event_state (controller);
+	guint button = pps_platform_get_current_button (self);
+	guint state = pps_platform_get_event_state (controller);
 
 	/* Clear selection on primary button clicks (context menu events are handled separately
 	 * in button_press and preserve selection for annotation tools) */
@@ -5229,7 +5228,7 @@ pps_view_move_cursor (PpsView *view,
 	/* Notify the user that it was not possible to move the caret cursor */
 	if (!clear_selections &&
 	    prev_offset == priv->cursor_offset && prev_page == priv->cursor_page) {
-		gtk_widget_error_bell (GTK_WIDGET (view));
+		pps_platform_error_bell (view);
 		return TRUE;
 	}
 
@@ -5237,7 +5236,7 @@ pps_view_move_cursor (PpsView *view,
 	if (!get_caret_cursor_area (view, priv->cursor_page, priv->cursor_offset, &rect))
 		return TRUE;
 
-	gtk_widget_grab_focus (GTK_WIDGET (view));
+	pps_platform_grab_focus (view);
 
 	if (!pps_document_model_get_continuous (priv->model)) {
 		changed_page = FALSE;
@@ -5277,7 +5276,7 @@ pps_view_move_cursor (PpsView *view,
 		}
 		if (!clear_selections &&
 		    prev_offset == priv->cursor_offset && prev_page == priv->cursor_page) {
-			gtk_widget_error_bell (GTK_WIDGET (view));
+			pps_platform_error_bell (view);
 			return TRUE;
 		}
 
@@ -5390,7 +5389,7 @@ pps_view_focus_in (GtkEventControllerFocus *self,
 		pps_pixbuf_cache_style_changed (priv->pixbuf_cache);
 
 	pps_view_check_cursor_blink (view);
-	gtk_widget_queue_draw (GTK_WIDGET (view));
+	pps_platform_queue_draw (view);
 }
 
 static void
@@ -5404,7 +5403,7 @@ pps_view_focus_out (GtkEventControllerFocus *self,
 		pps_pixbuf_cache_style_changed (priv->pixbuf_cache);
 
 	pps_view_check_cursor_blink (view);
-	gtk_widget_queue_draw (GTK_WIDGET (view));
+	pps_platform_queue_draw (view);
 }
 
 /*** Drawing ***/
@@ -5641,7 +5640,7 @@ view_update_scale_limits (PpsView *view)
 	if (!document)
 		return;
 
-	dpi = pps_document_misc_get_widget_dpi (GTK_WIDGET (view)) / 72.0;
+	dpi = pps_platform_get_widget_dpi (view) / 72.0;
 
 	pps_document_get_max_page_size (document, &max_width, &max_height);
 	max_scale = sqrt (priv->pixbuf_cache_size / (max_width * 4 * max_height));
@@ -5663,7 +5662,7 @@ page_swipe_cb (GtkGestureSwipe *gesture,
 	if (pps_document_model_get_continuous (priv->model))
 		return;
 
-	GtkTextDirection direction = gtk_widget_get_direction (GTK_WIDGET (view)) || gtk_widget_get_default_direction ();
+	GtkTextDirection direction = pps_platform_get_text_direction (view);
 	gdouble angle = atan2 (velocity_x, velocity_y);
 	gdouble speed = sqrt (pow (velocity_x, 2) + pow (velocity_y, 2));
 

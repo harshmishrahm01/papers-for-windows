@@ -38,6 +38,12 @@ cargo_build = custom_target(
   ]
 )
 
+if host_machine.system() == 'windows'
+  bin_name = meson.project_name() + '.exe'
+else
+  bin_name = meson.project_name()
+endif
+
 custom_target(
   'cp-binary',
   depends: cargo_build,
@@ -45,10 +51,11 @@ custom_target(
   build_always_stale: true,
   install: true,
   install_dir: get_option('bindir'),
-  output: meson.project_name(),
+  output: bin_name,
   command: [
-    'cp',
-    meson.current_build_dir() / rust_target / meson.project_name(),
+    find_program('python3', 'python'),
+    '-c', 'import sys, shutil; shutil.copy2(sys.argv[1], sys.argv[2])',
+    meson.current_build_dir() / rust_target / bin_name,
     '@OUTPUT@',
   ],
 )

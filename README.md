@@ -5,6 +5,11 @@ page document formats like PDF and DejaVu.  For more general
 information about Papers and how to get started, please visit
 [https://welcome.gnome.org/app/Papers](https://welcome.gnome.org/app/Papers)
 
+## Windows Native Port
+
+GNOME Papers is now compatible with Windows! For setup, build instructions, and architectural details specific to Windows, please refer to:
+* **[README.windows.md](README.windows.md)**
+
 ## Installation
 
 Papers is licensed under the [GPLv2][license], get it on Flathub!

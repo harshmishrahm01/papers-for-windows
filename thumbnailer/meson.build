@@ -34,6 +34,12 @@ cargo_build = custom_target(
   ],
 )
 
+if host_machine.system() == 'windows'
+  thumb_bin_name = meson.project_name() + '-thumbnailer.exe'
+else
+  thumb_bin_name = meson.project_name() + '-thumbnailer'
+endif
+
 copy = custom_target(
   'cp-binary',
   depends: cargo_build,
@@ -41,11 +47,11 @@ copy = custom_target(
   build_always_stale: true,
   install: true,
   install_dir: get_option('bindir'),
-  output: meson.project_name() + '-thumbnailer',
+  output: thumb_bin_name,
   command: [
-    'cp',
-    meson.current_build_dir() / rust_target / meson.project_name()
-    + '-thumbnailer',
+    find_program('python3', 'python'),
+    '-c', 'import sys, shutil; shutil.copy2(sys.argv[1], sys.argv[2])',
+    meson.current_build_dir() / rust_target / thumb_bin_name,
     '@OUTPUT@',
   ],
 )
