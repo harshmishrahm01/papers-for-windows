@@ -39,3 +39,7 @@ gschemas.compiled
 .settings/
 Thumbs.db
 Desktop.ini
+
+# Package bundling and installer directories
+dist/
+build-installer/
