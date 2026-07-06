@@ -113,4 +113,4 @@ Papers is originally branched from GNOME Evince. We thank the original authors a
 
 ## 5. Licensing
 
-Papers is licensed under the GNU General Public License (GPLv2). See the `COPYING` file for license details.
+Papers is licensed under the GNU General Public License (GPLv3). See the `COPYING` file for license details.
