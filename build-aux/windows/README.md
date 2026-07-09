@@ -40,8 +40,8 @@ In your UCRT64 shell, navigate to the project directory and run the compilation 
 # Ensure UCRT64 binaries are in the path
 export PATH=/ucrt64/bin:$PATH
 
-# Setup and configure the build directory
-meson setup build --reconfigure
+# Setup and configure the build directory in release mode with stripped symbols
+meson setup build --buildtype=release --strip --reconfigure
 
 # Compile all targets (C dependencies, Rust bindings, shell, and thumbnailer)
 meson compile -C build

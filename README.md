@@ -60,8 +60,8 @@ Once dependencies are configured, compile the project using MSYS2 UCRT64:
 # Set PATH to UCRT64 binaries
 export PATH=/ucrt64/bin:$PATH
 
-# Reconfigure the build directory
-meson setup build --reconfigure
+# Setup and configure the build directory in release mode with stripped symbols
+meson setup build --buildtype=release --strip --reconfigure
 
 # Compile all shell targets
 meson compile -C build

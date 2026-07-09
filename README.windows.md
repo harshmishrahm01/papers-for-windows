@@ -23,7 +23,7 @@ This port maintains the core design aesthetics and features of GNOME Papers whil
 3. Compile the project:
    ```bash
    export PATH=/ucrt64/bin:$PATH
-   meson setup build --reconfigure
+   meson setup build --buildtype=release --strip --reconfigure
    meson compile -C build
    ```
 4. Run the application:

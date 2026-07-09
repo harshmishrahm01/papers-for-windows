@@ -106,6 +106,6 @@ Write-Host "   To build the project, run the following commands:" -ForegroundCol
 Write-Host "   MSYS2 Path: $bashExe" -ForegroundColor Yellow
 Write-Host "   Commands:" -ForegroundColor Yellow
 Write-Host "     1. export PATH=/ucrt64/bin:`$PATH" -ForegroundColor Yellow
-Write-Host "     2. meson setup build --reconfigure" -ForegroundColor Yellow
+Write-Host "     2. meson setup build --buildtype=release --strip --reconfigure" -ForegroundColor Yellow
 Write-Host "     3. meson compile -C build" -ForegroundColor Yellow
 Write-Host "==========================================================" -ForegroundColor Green
