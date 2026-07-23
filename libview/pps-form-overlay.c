@@ -10,6 +10,7 @@
 #include "pps-form-field-private.h"
 #include "pps-overlay.h"
 #include "pps-view.h"
+#include "pps-platform.h"
 
 typedef struct {
 	PpsFormField *field;
@@ -187,7 +188,7 @@ pps_overlay_form_field_text_button_pressed (GtkGestureClick *self,
                                             gdouble y,
                                             gpointer user_data)
 {
-	gtk_gesture_set_state (GTK_GESTURE (self), GTK_EVENT_SEQUENCE_CLAIMED);
+	pps_platform_gesture_set_state (self, GTK_EVENT_SEQUENCE_CLAIMED);
 }
 
 static GtkWidget *

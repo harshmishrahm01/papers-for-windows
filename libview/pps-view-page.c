@@ -21,6 +21,7 @@
 #include "pps-overlay.h"
 #include "pps-view-private.h"
 #include "pps-view.h"
+#include "pps-platform.h"
 #include <gdk/gdk.h>
 
 #define PPS_STYLE_CLASS_DOCUMENT_PAGE "document-page"
@@ -749,7 +750,7 @@ annotation_drag_update_cb (GtkGestureDrag *annotation_drag_gesture,
 
 	if (gtk_drag_check_threshold (GTK_WIDGET (page), 0, 0,
 	                              offset_x, offset_y))
-		gtk_gesture_set_state (GTK_GESTURE (annotation_drag_gesture),
+		pps_platform_gesture_set_state (annotation_drag_gesture,
 		                       GTK_EVENT_SEQUENCE_CLAIMED);
 
 	if (gtk_gesture_get_sequence_state (GTK_GESTURE (annotation_drag_gesture), sequence) != GTK_EVENT_SEQUENCE_CLAIMED)
@@ -774,7 +775,7 @@ annotation_drag_begin_cb (GtkGestureDrag *annotation_drag_gesture,
 	PpsRectangle annot_area;
 
 	if (!PPS_ANNOTATIONS_CONTEXT (priv->annots_context)) {
-		gtk_gesture_set_state (GTK_GESTURE (annotation_drag_gesture), GTK_EVENT_SEQUENCE_DENIED);
+		pps_platform_gesture_set_state (annotation_drag_gesture, GTK_EVENT_SEQUENCE_DENIED);
 		return;
 	}
 
@@ -785,13 +786,13 @@ annotation_drag_begin_cb (GtkGestureDrag *annotation_drag_gesture,
 	                                                        &doc_point);
 
 	if (!PPS_IS_ANNOTATION_TEXT (annot)) {
-		gtk_gesture_set_state (GTK_GESTURE (annotation_drag_gesture),
+		pps_platform_gesture_set_state (annotation_drag_gesture,
 		                       GTK_EVENT_SEQUENCE_DENIED);
 		return;
 	}
 
 	if (pps_document_model_get_annotation_editing_state (priv->model) != PPS_ANNOTATION_EDITING_STATE_NONE) {
-		gtk_gesture_set_state (GTK_GESTURE (annotation_drag_gesture),
+		pps_platform_gesture_set_state (annotation_drag_gesture,
 		                       GTK_EVENT_SEQUENCE_DENIED);
 		return;
 	}

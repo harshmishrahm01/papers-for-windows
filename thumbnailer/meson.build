@@ -47,7 +47,6 @@ cargo_build = custom_target(
   ],
 )
 
-
 if host_machine.system() == 'windows'
   thumb_bin_name = meson.project_name() + '-thumbnailer.exe'
 else

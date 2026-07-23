@@ -6,7 +6,7 @@ build/
 /subprojects/*/
 
 # Flatpak
-.flatpak-builde
+.flatpak-builder
 
 # PO translations
 po/papers.pot
@@ -43,8 +43,6 @@ Desktop.ini
 # Package bundling and installer directories
 dist/
 build-installer/
-setup.iss
 install.bat
+bundle.ps1
 untracked/
-logs/
-papers-*.exe

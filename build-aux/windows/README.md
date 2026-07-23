@@ -1,23 +1,20 @@
-# Building and Packaging GNOME Papers on Windows (MSYS2 UCRT64)
+# Building on Windows (MSYS2 UCRT64)
 
-This guide describes how to configure, compile, run, and package GNOME Papers natively on Windows using the MSYS2 UCRT64 environment.
+This guide describes how to configure, compile, and run GNOME Papers natively on Windows using the MSYS2 UCRT64 environment.
 
 ---
 
-## 1. Prerequisites & Automated Setup
+## 1. Prerequisites
 
-We provide an automated PowerShell script to install MSYS2 and configure all UCRT64 library dependencies:
+### Install MSYS2
+1. Download and install [MSYS2](https://www.msys2.org/).
+2. Run the **MSYS2 UCRT64** terminal.
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process
-.\build-aux\windows\auto-setup.ps1
-```
-
-### Manual Dependency Installation
-Alternatively, in an MSYS2 UCRT64 terminal, run:
+### Install Required Packages
+In the UCRT64 terminal, run the following command to install the required system libraries, compilers, build systems, and dependencies:
 
 ```bash
-pacman -S --noconfirm --needed \
+pacman -S --noconfirm \
   mingw-w64-ucrt-x86_64-gcc \
   mingw-w64-ucrt-x86_64-meson \
   mingw-w64-ucrt-x86_64-ninja \
@@ -26,13 +23,10 @@ pacman -S --noconfirm --needed \
   mingw-w64-ucrt-x86_64-libadwaita \
   mingw-w64-ucrt-x86_64-poppler-glib \
   mingw-w64-ucrt-x86_64-libspelling \
-  mingw-w64-ucrt-x86_64-blueprint-compiler \
-  mingw-w64-ucrt-x86_64-gettext \
-  mingw-w64-ucrt-x86_64-appstream \
   mingw-w64-ucrt-x86_64-djvulibre \
   mingw-w64-ucrt-x86_64-libarchive \
   mingw-w64-ucrt-x86_64-libtiff \
-  mingw-w64-ucrt-x86_64-pkgconf \
+  mingw-w64-ucrt-x86_64-pkg-config \
   diffutils
 ```
 
@@ -40,49 +34,40 @@ pacman -S --noconfirm --needed \
 
 ## 2. Configuration & Compilation
 
-In your UCRT64 shell:
+In your UCRT64 shell, navigate to the project directory and run the compilation commands:
 
 ```bash
+# Ensure UCRT64 binaries are in the path
 export PATH=/ucrt64/bin:$PATH
 
-# Setup build directory
-meson setup build --buildtype=release --strip -Ddocumentation=false -Duser_doc=false -Dnautilus=false -Dkeyring=disabled --reconfigure
+# Setup and configure the build directory in release mode with stripped symbols
+meson setup build --buildtype=release --strip --reconfigure
 
-# Compile targets
+# Compile all targets (C dependencies, Rust bindings, shell, and thumbnailer)
 meson compile -C build
 ```
 
-This compiles:
-- Application binary: `build/shell/src/papers.exe`
-- Previewer binary: `build/previewer/papers-previewer.exe`
-- Thumbnailer binary: `build/thumbnailer/release/papers-thumbnailer.exe`
-- Document backend plugins: `build/libdocument/backend/*.dll`
+This will produce the compiled binaries in `build/`:
+- `build/shell/src/papers.exe`
+- `build/thumbnailer/release/papers-thumbnailer.exe`
+- Backend DLLs in `build/libdocument/backend/`
 
 ---
 
-## 3. Packaging & Staging
+## 3. Running the Application
 
-To stage a standalone portable release directory (`dist/`) containing the executables, DLL dependencies, backends, GSettings schemas, and MIME database:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build-aux\windows\bundle.ps1
-```
-
-### Creating Windows Installer (.exe)
-To generate the NSIS installer:
+To run the application directly from the build directory, you need to expose the local GSettings schemas, backends directory, and library dependency DLLs:
 
 ```bash
-makensis build-aux/windows/papers.nsi
-```
-
----
-
-## 4. Running the Application Locally
-
-```bash
+# Add DLL dependencies to PATH
 export PATH=/ucrt64/bin:build/libdocument:build/libview:$PATH
+
+# Specify GSettings schema path
 export GSETTINGS_SCHEMA_DIR=build/data
+
+# Specify Papers Document Backends path
 export PPS_BACKENDS_DIR=build/libdocument/backend
 
+# Launch the app
 build/shell/src/papers.exe
 ```
