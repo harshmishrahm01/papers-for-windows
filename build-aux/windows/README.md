@@ -21,7 +21,7 @@ pacman -S --noconfirm \
   mingw-w64-ucrt-x86_64-rust \
   mingw-w64-ucrt-x86_64-gtk4 \
   mingw-w64-ucrt-x86_64-libadwaita \
-  mingw-w64-ucrt-x86_64-poppler-glib \
+  mingw-w64-ucrt-x86_64-poppler \
   mingw-w64-ucrt-x86_64-libspelling \
   mingw-w64-ucrt-x86_64-djvulibre \
   mingw-w64-ucrt-x86_64-libarchive \

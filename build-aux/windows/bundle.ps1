@@ -3,16 +3,11 @@
 
 $ErrorActionPreference = "Stop"
 
-# 1. Setup paths
-$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-if (Test-Path (Join-Path $scriptDir "..\..\meson.build")) {
-    $projectRoot = (Get-Item (Join-Path $scriptDir "..\..")).FullName
-} else {
-    $projectRoot = (Get-Item .).FullName
-}
-Set-Location $projectRoot
+# 1. Setup paths relative to repository root
+$repoRoot = (Get-Item $PSScriptRoot).Parent.Parent.FullName
+Set-Location $repoRoot
 
-$distDir = Join-Path $projectRoot "dist"
+$distDir = Join-Path $repoRoot "dist"
 $binDir = Join-Path $distDir "bin"
 $backendsDir = Join-Path $distDir "lib\papers\6\backends"
 $schemasDir = Join-Path $distDir "share\glib-2.0\schemas"
@@ -25,7 +20,7 @@ if (!(Test-Path "$msysPath\usr\bin\bash.exe")) {
     if (Test-Path "C:\nbin\msys64\usr\bin\bash.exe") {
         $msysPath = "C:\nbin\msys64"
     } else {
-        throw "MSYS2 was not found at C:\msys64."
+        $msysPath = Read-Host "MSYS2 was not found at C:\msys64. Please enter your MSYS2 install path"
     }
 }
 
@@ -43,11 +38,7 @@ New-Item -ItemType Directory -Force -Path $pixbufDir | Out-Null
 
 Write-Host "Copying compiled binaries and backends..." -ForegroundColor Cyan
 Copy-Item "build\shell\src\papers.exe" $binDir -Force
-if (Test-Path "build\thumbnailer\papers-thumbnailer.exe") {
-    Copy-Item "build\thumbnailer\papers-thumbnailer.exe" $binDir -Force
-} elseif (Test-Path "build\thumbnailer\release\papers-thumbnailer.exe") {
-    Copy-Item "build\thumbnailer\release\papers-thumbnailer.exe" $binDir -Force
-}
+Copy-Item "build\thumbnailer\release\papers-thumbnailer.exe" $binDir -Force
 Copy-Item "build\previewer\papers-previewer.exe" $binDir -Force
 Copy-Item "build\libdocument\libppsdocument-4.0-6.dll" $binDir -Force
 Copy-Item "build\libview\libppsview-4.0-5.dll" $binDir -Force
@@ -56,9 +47,8 @@ Copy-Item "build\libdocument\backend\*.papers-backend" $backendsDir -Force
 Copy-Item "build\data\gschemas.compiled" $schemasDir -Force
 
 Write-Host "Resolving and copying DLL dependencies via ldd..." -ForegroundColor Cyan
-$buildPathPosix = ($projectRoot -replace '\\', '/' -replace '^([A-Za-z]):', '/$1')
-$lddCmd = "export PATH=/ucrt64/bin:$buildPathPosix/build/libdocument:$buildPathPosix/build/libview:`$PATH && ldd $buildPathPosix/build/shell/src/papers.exe $buildPathPosix/build/previewer/papers-previewer.exe $buildPathPosix/build/libdocument/backend/*.dll"
-$lddOutput = & $bashExe -lc $lddCmd
+$posixRepo = "/" + $repoRoot.Substring(0,1).ToLower() + ($repoRoot.Substring(2) -replace '\\', '/')
+$lddOutput = & $bashExe -lc "export PATH=/ucrt64/bin:$posixRepo/build/libdocument:$posixRepo/build/libview:`$PATH && ldd $posixRepo/build/shell/src/papers.exe $posixRepo/build/thumbnailer/release/papers-thumbnailer.exe $posixRepo/build/previewer/papers-previewer.exe $posixRepo/build/libdocument/backend/*.dll"
 
 foreach ($line in $lddOutput) {
     if ($line -match '/ucrt64/bin/([^ ]+)') {
@@ -71,18 +61,10 @@ foreach ($line in $lddOutput) {
 }
 
 Write-Host "Copying UI assets, MIME database, and GdkPixbuf loaders..." -ForegroundColor Cyan
-if (Test-Path (Join-Path $ucrtShare "icons\Adwaita")) {
-    Copy-Item -Path (Join-Path $ucrtShare "icons\Adwaita") -Destination $iconsDir -Recurse -Container -Force
-}
-if (Test-Path (Join-Path $ucrtShare "icons\hicolor")) {
-    Copy-Item -Path (Join-Path $ucrtShare "icons\hicolor") -Destination $iconsDir -Recurse -Container -Force
-}
-if (Test-Path (Join-Path $ucrtShare "mime")) {
-    Copy-Item -Path (Join-Path $ucrtShare "mime") -Destination (Join-Path $distDir "share") -Recurse -Container -Force
-}
-if (Test-Path (Join-Path $ucrtLib "gdk-pixbuf-2.0")) {
-    Copy-Item -Path (Join-Path $ucrtLib "gdk-pixbuf-2.0\*") -Destination $pixbufDir -Recurse -Container -Force
-}
+Copy-Item -Path (Join-Path $ucrtShare "icons\Adwaita") -Destination $iconsDir -Recurse -Container -Force
+Copy-Item -Path (Join-Path $ucrtShare "icons\hicolor") -Destination $iconsDir -Recurse -Container -Force
+Copy-Item -Path (Join-Path $ucrtShare "mime") -Destination (Join-Path $distDir "share") -Recurse -Container -Force
+Copy-Item -Path (Join-Path $ucrtLib "gdk-pixbuf-2.0\*") -Destination $pixbufDir -Recurse -Container -Force
 
 Write-Host ""
 Write-Host "==========================================================" -ForegroundColor Green

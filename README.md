@@ -44,13 +44,13 @@ We provide an automated PowerShell script to set up MSYS2 and install all depend
 2. Execute the setup script in the project root:
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process
-   .\auto-setup.ps1
+   .\build-aux\windows\auto-setup.ps1
    ```
 3. The script will prompt you for an installation path (Defaulting to `C:\nbin\msys64`) and automatically install:
    - GCC compiler toolchains (`mingw-w64-ucrt-x86_64-gcc`)
    - Build systems (`meson`, `ninja`, `pkg-config`)
    - Rust development toolchain (`mingw-w64-ucrt-x86_64-rust`)
-   - External library dependencies (`gtk4`, `libadwaita`, `poppler-glib`, `libspelling`, `djvulibre`, `libarchive`, `libtiff`)
+   - External library dependencies (`gtk4`, `libadwaita`, `poppler`, `libspelling`, `djvulibre`, `libarchive`, `libtiff`)
    - UNIX compatibility utilities (`diffutils`)
 
 ### 3.2 Manual Compilation
