@@ -533,26 +533,10 @@ pub fn spawn(file: Option<&gio::File>, dest: Option<&LinkDest>, mode: Option<Win
                 cmd.arg(file.uri());
             }
 
-        // MacOS take this path since GAppInfo doesn't support created by
-        // command line on MacOS.
-        #[cfg(not(target_os = "windows"))]
-        if let Err(e) = glib::spawn_command_line_async(cmd) {
-            glib::g_printerr!(
-                "Error launching papers {}: {}\n",
-                uri.unwrap_or_default(),
-                e.message()
-            );
+            if let Err(e) = cmd.spawn() {
+                glib::g_critical!("", "Failed to spawn new papers process: {}", e);
+            }
         }
-        #[cfg(target_os = "windows")]
-        if let Err(e) = std::process::Command::new("cmd")
-            .args(&["/C", cmd.trim()])
-            .spawn()
-        {
-            glib::g_printerr!(
-                "Error launching papers {}: {}\n",
-                uri.unwrap_or_default(),
-                e
-            );
-        }
+        Err(e) => glib::g_critical!("", "Failed to find current executable: {}", e),
     }
 }
