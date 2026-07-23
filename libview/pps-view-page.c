@@ -602,7 +602,12 @@ pps_view_page_snapshot (GtkWidget *widget, GtkSnapshot *snapshot)
 		if (region) {
 			GdkRGBA color;
 
+#ifdef HAVE_TRANSPARENT_SELECTION
+			get_selection_color (GTK_WIDGET (page), &color);
+#else
 			get_accent_color (&color, NULL);
+			color.alpha = 0.4;
+#endif
 			draw_selection_region (snapshot, region, &color);
 		}
 	}

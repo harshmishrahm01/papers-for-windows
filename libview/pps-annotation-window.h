@@ -30,7 +30,7 @@ typedef struct _PpsAnnotationWindowClass PpsAnnotationWindowClass;
 #define PPS_IS_ANNOTATION_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PPS_TYPE_ANNOTATION_WINDOW))
 #define PPS_ANNOTATION_WINDOW_GET_CLASS(object) (G_TYPE_INSTANCE_GET_CLASS ((object), PPS_TYPE_ANNOTATION_WINDOW, PpsAnnotationWindowClass))
 
-GType pps_annotation_window_get_type (void) G_GNUC_CONST;
+GType pps_annotation_window_get_type (void);
 GtkWidget *pps_annotation_window_new (PpsAnnotationMarkup *annot,
                                       GtkWindow *parent);
 PpsAnnotation *pps_annotation_window_get_annotation (PpsAnnotationWindow *window);

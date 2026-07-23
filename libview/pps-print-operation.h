@@ -28,7 +28,7 @@ typedef struct _PpsPrintOperationClass PpsPrintOperationClass;
 #define PPS_PRINT_OPERATION_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), PPS_TYPE_PRINT_OPERATION, PpsPrintOperationClass))
 
 PPS_PUBLIC
-GType pps_print_operation_get_type (void) G_GNUC_CONST;
+GType pps_print_operation_get_type (void);
 
 PPS_PUBLIC
 gboolean pps_print_operation_exists_for_document (PpsDocument *document);

@@ -470,6 +470,116 @@ djvu_text_page_index_text (DjvuTextPage *page,
 	                            case_sensitive, FALSE);
 }
 
+static void
+djvu_text_page_append_char_areas (GArray *areas,
+                                  const PpsRectangle *rect,
+                                  const char *text)
+{
+	/* This function adds n times rect to areas, where n is the number of
+	 * utf8 characters of text */
+	const char *p = text;
+
+	while (*p) {
+		PpsRectangle r = *rect;
+
+		g_array_append_val (areas, r);
+		p = g_utf8_next_char (p);
+	}
+}
+
+static void
+djvu_text_page_append_space_area (GArray *areas,
+                                  const PpsRectangle *next_rect)
+{
+	PpsRectangle space;
+
+	if (areas->len > 0) {
+		PpsRectangle *prev = &g_array_index (areas, PpsRectangle, areas->len - 1);
+
+		space.x1 = prev->x2;
+		space.x2 = next_rect->x1;
+		space.y1 = prev->y1;
+		space.y2 = prev->y2;
+		if (space.x2 <= space.x1)
+			space.x2 = space.x1 + 1.0;
+	} else {
+		space = *next_rect;
+		space.x2 = space.x1 + 1.0;
+	}
+
+	g_array_append_val (areas, space);
+}
+
+static void
+djvu_text_page_build_text_layout (DjvuTextPage *page,
+                                  miniexp_t p,
+                                  GArray *areas,
+                                  gdouble height,
+                                  gdouble dpi,
+                                  gboolean delimit)
+{
+	miniexp_t deeper;
+
+	g_return_if_fail (miniexp_consp (page->text_structure) &&
+	                  miniexp_symbolp (miniexp_car (page->text_structure)));
+
+	delimit |= page->char_symbol != miniexp_car (p);
+
+	deeper = miniexp_cddr (miniexp_cdddr (p));
+	while (deeper != miniexp_nil) {
+		miniexp_t data = miniexp_car (deeper);
+
+		if (miniexp_stringp (data)) {
+			PpsRectangle doc_rect, page_rect;
+			const char *token_text = miniexp_to_str (data);
+
+			doc_rect.x1 = miniexp_to_int (miniexp_nth (1, p));
+			doc_rect.y1 = miniexp_to_int (miniexp_nth (2, p));
+			doc_rect.x2 = miniexp_to_int (miniexp_nth (3, p));
+			doc_rect.y2 = miniexp_to_int (miniexp_nth (4, p));
+			djvu_doc_to_page_rect (&page_rect, &doc_rect, height, dpi);
+
+			if (delimit && areas->len > 0)
+				djvu_text_page_append_space_area (areas, &page_rect);
+
+			if (token_text != NULL)
+				djvu_text_page_append_char_areas (areas, &page_rect, token_text);
+		} else
+			djvu_text_page_build_text_layout (page, data, areas, height, dpi, delimit);
+
+		delimit = FALSE;
+		deeper = miniexp_cdr (deeper);
+	}
+}
+
+gboolean
+djvu_text_page_get_text_layout (DjvuTextPage *page,
+                                gdouble height,
+                                gdouble dpi,
+                                PpsRectangle **areas,
+                                guint *n_areas)
+{
+	GArray *layout;
+	gsize len;
+
+	g_return_val_if_fail (miniexp_consp (page->text_structure) &&
+	                          miniexp_symbolp (miniexp_car (page->text_structure)),
+	                      FALSE);
+
+	layout = g_array_new (FALSE, FALSE, sizeof (PpsRectangle));
+	djvu_text_page_build_text_layout (page, page->text_structure, layout, height, dpi, FALSE);
+
+	if (layout->len == 0) {
+		g_array_free (layout, TRUE);
+		return FALSE;
+	}
+
+	*areas = g_array_steal (layout, &len);
+	*n_areas = len;
+
+	return TRUE;
+}
+
 /**
  * djvu_text_page_new:
  * @text: S-expression of the page text

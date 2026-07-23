@@ -20,12 +20,25 @@ endif
 
 cargo_env = cargo_common_env
 
+cargo_deps = []
+
+if host_machine.system() == 'windows'
+  win = import('windows')
+  thumb_win_res = win.compile_resources(
+    'papers-thumbnailer.rc',
+    depend_files: files('../shell/resources/papers.ico'),
+  )
+  cargo_deps += thumb_win_res
+  cargo_env.set('RUSTFLAGS', '-C link-arg=' + thumb_win_res[0].full_path())
+endif
+
 cargo_build = custom_target(
   'cargo-build',
   build_by_default: true,
   build_always_stale: true,
   output: 'src',
   console: true,
+  depends: cargo_deps,
   env: cargo_env,
   command: [
     cargo,

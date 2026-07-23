@@ -116,7 +116,7 @@ struct _PpsDocumentInfo {
 };
 
 PPS_PUBLIC
-GType pps_document_info_get_type (void) G_GNUC_CONST;
+GType pps_document_info_get_type (void);
 PPS_PUBLIC
 PpsDocumentInfo *pps_document_info_new (void);
 PPS_PUBLIC
@@ -177,7 +177,7 @@ struct _PpsDocumentLicense {
 	gchar *web_statement;
 };
 PPS_PUBLIC
-GType pps_document_license_get_type (void) G_GNUC_CONST;
+GType pps_document_license_get_type (void);
 PPS_PUBLIC
 PpsDocumentLicense *pps_document_license_new (void);
 PPS_PUBLIC

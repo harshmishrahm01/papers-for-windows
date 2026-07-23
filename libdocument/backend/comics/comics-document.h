@@ -16,6 +16,6 @@ G_BEGIN_DECLS
 
 typedef struct _ComicsDocument ComicsDocument;
 
-GType comics_document_get_type (void) G_GNUC_CONST;
+GType comics_document_get_type (void);
 
 G_END_DECLS

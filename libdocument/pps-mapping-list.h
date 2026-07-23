@@ -20,7 +20,7 @@ typedef struct _PpsMappingList PpsMappingList;
 
 #define PPS_TYPE_MAPPING_LIST (pps_mapping_list_get_type ())
 PPS_PUBLIC
-GType pps_mapping_list_get_type (void) G_GNUC_CONST;
+GType pps_mapping_list_get_type (void);
 
 PPS_PUBLIC
 PpsMappingList *pps_mapping_list_new (guint page,

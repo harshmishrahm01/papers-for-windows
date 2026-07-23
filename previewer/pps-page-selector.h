@@ -24,7 +24,7 @@ struct _PpsPageSelectorClass {
 	                       PpsLink *link);
 };
 
-GType pps_page_selector_get_type (void) G_GNUC_CONST;
+GType pps_page_selector_get_type (void);
 
 void pps_page_selector_set_model (PpsPageSelector *page_selector,
                                   PpsDocumentModel *doc_model);

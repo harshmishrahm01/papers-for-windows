@@ -28,7 +28,7 @@ G_BEGIN_DECLS
 typedef struct _PpsPixbufCache PpsPixbufCache;
 typedef struct _PpsPixbufCacheClass PpsPixbufCacheClass;
 
-GType pps_pixbuf_cache_get_type (void) G_GNUC_CONST;
+GType pps_pixbuf_cache_get_type (void);
 PpsPixbufCache *pps_pixbuf_cache_new (GtkWidget *view,
                                       PpsDocumentModel *model,
                                       gsize max_size);

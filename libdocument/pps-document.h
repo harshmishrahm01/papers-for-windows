@@ -214,7 +214,7 @@ typedef struct {
 } PpsRectangle;
 
 PPS_PUBLIC
-GType pps_rectangle_get_type (void) G_GNUC_CONST;
+GType pps_rectangle_get_type (void);
 PPS_PUBLIC
 PpsRectangle *pps_rectangle_new (void);
 PPS_PUBLIC
@@ -229,7 +229,7 @@ struct _PpsMapping {
 };
 
 PPS_PUBLIC
-GType pps_mapping_get_type (void) G_GNUC_CONST;
+GType pps_mapping_get_type (void);
 PPS_PUBLIC
 PpsMapping *pps_mapping_new (void);
 PPS_PUBLIC

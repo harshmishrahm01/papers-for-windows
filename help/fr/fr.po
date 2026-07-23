@@ -1,36 +1,39 @@
-# French translation of evince documentation.
-# Copyright (C) 2006-2021 Free Software Foundation, Inc.
-# This file is distributed under the same license as the evince
+# French translation of papers documentation.
+# Copyright (C) 2006-2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the papers
 # documentation package.
 #
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2006-2007.
 # Claude Paroz <claude@2xlibre.net>, 2006-2008, 2020-2021.
 # Bruno Brouard <annoa.b@gmail.com>, 2011-12.
 # Mickael Albertus <mickael.albertus@gmail.com>, 2012, 2013.
+# Michael Scherer <misc@zarb.org>, 2014.
+# Leonor Palazzo <leonor.palazzo@gmail.com>, 2015.
 # Guillaume Bernard <associations@guillaume-bernard.fr>, 2018-2020.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2019.
 # Charles Monzat <charles.monzat@free.fr>, 2017-2021.
 # Irénée THIRION <irenee.thirion@e.email>, 2022-2025.
+# Alice Biseuil <alice.biseuil@protonmail.com>, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: evince-doc\n"
-"POT-Creation-Date: 2025-09-15 12:00+0000\n"
-"PO-Revision-Date: 2025-09-17 12:56+0200\n"
-"Last-Translator: Irénée THIRION <irenee.thirion@e.email>\n"
-"Language-Team: French\n"
+"Project-Id-Version: papers-doc\n"
+"POT-Creation-Date: 2026-07-10 18:37+0000\n"
+"PO-Revision-Date: 2026-07-13 13:31+0200\n"
+"Last-Translator: Guillaume Bernard <associations@guillaume-bernard.fr>\n"
+"Language-Team: French <international-french@discourse.gnome.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 49.0\n"
+"X-Generator: Poedit 3.9\n"
 "X-DL-Team: fr\n"
 "X-DL-Module: papers\n"
 "X-DL-Branch: main\n"
 "X-DL-Domain: help\n"
 "X-DL-State: Translating\n"
 "X-DL-Lang: fr\n"
-"X-DL-VCS-Web: https://gitlab.gnome.org/GNOME/Incubator/papers\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -45,7 +48,8 @@ msgstr ""
 "Guillaume Bernard <associations@guillaume-bernard.fr>, 2018\n"
 "J-Paul Bérard <arverne@wanadoo.fr>, 2019\n"
 "Charles Monzat <charles.monzat@free.fr>, 2020-2021\n"
-"Irénée Thirion <irenee.thirion@e.email>, 2023-2025"
+"Irénée Thirion <irenee.thirion@e.email>, 2023-2025\n"
+"Alice Biseuil <alice.biseuil@protonmail.com>, 2026"
 
 #. (itstool) path: info/desc
 #: C/annotation-properties.page:7
@@ -111,7 +115,7 @@ msgstr "Faites un clic droit sur l’icône annotation dans le document."
 #. (itstool) path: item/p
 #: C/annotation-properties.page:29
 msgid "Select <gui>Annotation Properties…</gui>."
-msgstr "Choisissez <gui>Propriétés de l’annotation</gui>."
+msgstr "Choisissez <gui>Propriétés de l’annotation…</gui>."
 
 #. (itstool) path: item/p
 #: C/annotation-properties.page:34
@@ -119,7 +123,7 @@ msgid ""
 "In the <gui>Annotation Properties</gui> window, you can change the author, "
 "color, style and icon of your note."
 msgstr ""
-"Dans la fenêtre <gui>Propriétés de l’annotation</gui>, vous pouvez modifier "
+"Dans la fenêtre <gui>Propriétés des annotations</gui>, vous pouvez modifier "
 "l’auteur, la couleur, le style et l’icône de votre note."
 
 #. (itstool) path: note/p
@@ -128,7 +132,7 @@ msgid ""
 "The annotation properties will be applied to the note for which you made the "
 "changes only. Each note can have a different set of properties."
 msgstr ""
-"Les propriétés de l’annotation ne s’appliquent qu’à la note pour laquelle "
+"Les propriétés des annotations ne s’appliquent qu’à la note pour laquelle "
 "vous avez fait les modifications. Chaque note possède son propre lot de "
 "propriétés."
 
@@ -148,19 +152,19 @@ msgid ""
 "individually on each note. There is no way to save different default "
 "settings for annotation properties, at this time."
 msgstr ""
-"Les propriétés par défaut de l’annotation (auteur, couleur, style et icône) "
+"Les propriétés par défaut des annotations (auteur, couleur, style et icône) "
 "ne peuvent être modifiées que pour une note particulière comme il est dit "
 "plus haut. Par conséquent, si vous voulez que toutes les icônes de vos notes "
-"soient <gui>rouge</gui> au lieu de <gui>jaune</gui>, vous devez modifier la "
-"valeur par défaut de <gui>jaune</gui> à <gui>rouge</gui> individuellement "
-"pour chaque note. Pour l’instant, il n’est pas possible d’enregistrer "
-"d’autres réglages par défaut pour les propriétés d’annotation."
+"soient de couleur <gui>rouge</gui> au lieu de <gui>jaune</gui>, vous devez "
+"modifier la valeur par défaut de <gui>jaune</gui> à <gui>rouge</gui> "
+"individuellement pour chaque note. Pour l’instant, il n’est pas possible "
+"d’enregistrer d’autres réglages par défaut pour les propriétés d’annotation."
 
 #. (itstool) path: info/title
 #: C/duplex-6pages.page:7
 msgctxt "sort"
 msgid "06-Page Booklet"
-msgstr "Livret de 06 pages"
+msgstr "Livret de 6 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-6pages.page:8
@@ -195,8 +199,8 @@ msgid ""
 "Press the menu button in the top-right corner of the window and press the "
 "<gui style=\"button\">Print</gui> button."
 msgstr ""
-"Cliquez sur le bouton menu dans le coin supérieur droit de la fenêtre, puis "
-"cliquez sur le bouton <gui style=\"button\">Imprimer</gui>."
+"Cliquez sur le bouton de menu dans le coin supérieur droit de la fenêtre, "
+"puis cliquez sur le bouton <gui style=\"button\">Imprimer…</gui>."
 
 #. (itstool) path: item/p
 #: C/duplex-6pages.page:30 C/duplex-6pages.page:73 C/duplex-npages.page:53
@@ -308,9 +312,9 @@ msgid ""
 "in the printer, taking care to orient it correctly (page 1 will be printed "
 "on the other side)."
 msgstr ""
-"Une fois que les pages sont imprimées, prenez le papier sur lequel il y a 2 "
-"pages d’imprimées, replacez-le dans l’imprimante, en prenant soin de "
-"l’orienter correctement (la page 1 sera imprimée de l’autre côté)."
+"Une fois que les pages sont imprimées, prenez la feuille sur laquelle figure "
+"la page 2, et replacez-la dans l’imprimante, en prenant soin de l’orienter "
+"correctement (la page 1 sera imprimée de l’autre côté)."
 
 #. (itstool) path: item/p
 #: C/duplex-6pages.page:76 C/duplex-10pages.page:75 C/duplex-14pages.page:74
@@ -444,8 +448,8 @@ msgid ""
 "Merge the blank page with your PDF document using <app>PDF-Shuffler</app> "
 "placing the blank page at the end."
 msgstr ""
-"Fusionner les pages blanches avec votre document PDF en utilisant "
-"l’application <app>PDF-Shuffler</app> en plaçant la page blanche à la fin."
+"Fusionner la page blanche avec votre document PDF avec l’application "
+"<app>PDF-Shuffler</app> en plaçant la page blanche à la fin."
 
 #. (itstool) path: item/p
 #: C/duplex-15pages.page:40 C/duplex-13pages.page:154 C/duplex-14pages.page:109
@@ -638,8 +642,9 @@ msgid ""
 "Press the <keyseq><key>Ctrl</key><key>Page Up</key></keyseq> or "
 "<keyseq><key>Ctrl</key><key>Page Down</key></keyseq> buttons on the keyboard."
 msgstr ""
-"Appuyez sur les touches <keyseq><key>Ctrl</key><key>Page haut</key></keyseq> "
-"ou <keyseq><key>Ctrl</key><key>Page bas</key></keyseq> du clavier."
+"Appuyez sur les touches <keyseq><key>Ctrl</key><key>Page précédente</key></"
+"keyseq> ou <keyseq><key>Ctrl</key><key>Page suivante</key></keyseq> du "
+"clavier."
 
 #. (itstool) path: item/p
 #: C/movingaround.page:85
@@ -652,7 +657,7 @@ msgid ""
 "Type a page number in <gui style=\"input\">Select Page</gui> on the <link "
 "xref=\"headerbar\">header bar</link> and press <key>Enter</key>."
 msgstr ""
-"Saisissez un numéro de page dans <gui style=\"input\">Choisir la page</gui> "
+"Saisissez un numéro de page dans <gui style=\"input\">Choisir une page</gui> "
 "dans la <link xref=\"headerbar\">barre d’en-tête</link> et appuyez sur "
 "<key>Entrée</key>."
 
@@ -682,8 +687,8 @@ msgid ""
 "key></keyseq> or <keyseq><key>Shift</key><key>Page Down</key></keyseq>."
 msgstr ""
 "Pour se déplacer de 10 pages à la fois, appuyez sur <keyseq><key>Maj</"
-"key><key>Page haut</key></keyseq> ou <keyseq><key>Maj</key><key>Page bas</"
-"key></keyseq>."
+"key><key>Page précédente</key></keyseq> ou <keyseq><key>Maj</key><key>Page "
+"suivante</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/movingaround.page:111
@@ -737,7 +742,7 @@ msgid ""
 "side pane to view it."
 msgstr ""
 "Certains documents possèdent un sommaire ou une table des matières que vous "
-"pouvez afficher dans le panneau latéral. Appuyez sur le bouton "
+"pouvez afficher dans le panneau latéral. Cliquez sur le bouton "
 "<gui>Sommaire</gui> au bas du panneau latéral pour l’afficher."
 
 #. (itstool) path: note/p
@@ -794,7 +799,7 @@ msgid ""
 "The <gui>Fit Page</gui> option will make a document page fit the whole "
 "<em>height</em> of the window."
 msgstr ""
-"L’option <gui>Adapter à la page</gui> impose à la page du document d’être de "
+"L’option <gui>Ajuster à la page</gui> impose à la page du document d’être de "
 "la <em>hauteur</em> de la fenêtre."
 
 #. (itstool) path: note/p
@@ -803,7 +808,7 @@ msgid ""
 "The <gui>Fit Width</gui> option will make a document page fill the whole "
 "<em>width</em> of the window."
 msgstr ""
-"L’option <gui>Adapter à la largeur</gui> impose à la page du document d’être "
+"L’option <gui>Ajuster à la largeur</gui> impose à la page du document d’être "
 "de la <em>largeur</em> de la fenêtre."
 
 #. (itstool) path: note/p
@@ -868,8 +873,8 @@ msgstr "Signets"
 msgid ""
 "You can add, rename and delete bookmarks using <app>Document Viewer</app>."
 msgstr ""
-"Vous pouvez ajouter, renommer et effacer des signets en utilisant "
-"<app>Visionneur de documents</app>."
+"<app>Visionneur de documents</app> permet d’ajouter, renommer et supprimer "
+"des signets."
 
 #. (itstool) path: page/p
 #: C/bookmarks.page:38
@@ -947,7 +952,7 @@ msgstr "Appuyez sur la touche <key>Entrée</key>."
 #. (itstool) path: section/title
 #: C/bookmarks.page:82
 msgid "Delete a bookmark"
-msgstr "Effacer un signet"
+msgstr "Supprimer un signet"
 
 #. (itstool) path: item/p
 #: C/bookmarks.page:87
@@ -1135,8 +1140,8 @@ msgid ""
 "This works by opening the file in <app>Document Viewer</app> and "
 "\"printing\" the document as an SVG file."
 msgstr ""
-"Il suffit d’ouvrir le fichier dans <app>Visionneur de documents</app> et "
-"« d’imprimer » le document en tant que fichier SVG."
+"Pour cela, il faut ouvrir le fichier dans <app>Visionneur de documents</app> "
+"et « imprimer » le fichier au format SVG."
 
 #. (itstool) path: item/p
 #: C/convertSVG.page:37 C/printing.page:33
@@ -1246,10 +1251,9 @@ msgid ""
 "cmd>. You can open a specific file by typing the filename after the papers "
 "command:"
 msgstr ""
-"Pour lancer <app>Visionneur de documents</app> à partir de la ligne de "
-"commande, saisissez <cmd>papers</cmd>. Vous pouvez ouvrir un fichier "
-"spécifique en saisissant le nom du fichier après la commande <cmd>papers</"
-"cmd> :"
+"Pour lancer <app>Visionneur de documents</app> en ligne de commande, "
+"saisissez <cmd>papers</cmd>. Vous pouvez ouvrir un fichier spécifique en "
+"saisissant le nom du fichier après la commande papers :"
 
 #. (itstool) path: page/screen
 #: C/commandline.page:30
@@ -1280,8 +1284,8 @@ msgid ""
 "the web:"
 msgstr ""
 "<app>Visionneur de documents</app> prend également en charge les fichiers "
-"sur le Web. Par exemple, après la commande <cmd>papers</cmd> vous pouvez "
-"fournir l’emplacement d’un fichier sur le Web :"
+"sur le Web. Par exemple, après la commande <cmd>papers</cmd>, vous pouvez "
+"fournir l’adresse d’un fichier sur le Web :"
 
 #. (itstool) path: page/screen
 #: C/commandline.page:38
@@ -1316,7 +1320,7 @@ msgid ""
 "The page label should be in the same format as the page number displayed in "
 "the <app>Document Viewer</app> header bar."
 msgstr ""
-"L’étiquette de page doit être dans le même format que le numéro de page "
+"Il faut que le libellé de page soit au même format que le numéro de page "
 "affiché dans la barre d’en-tête de <app>Visionneur de documents</app>."
 
 #. (itstool) path: section/title
@@ -1422,10 +1426,9 @@ msgid ""
 "automatically reload the document and display the most recent version for "
 "you."
 msgstr ""
-"Si <app>Visionneur de documents</app> détecte que le document que vous "
-"avez ouvert a été modifié (peut-être parce qu’un autre programme l’a "
-"modifié), il recharge automatiquement le document et affiche la version la "
-"plus récente pour vous."
+"Si <app>Visionneur de documents</app> détecte que le document que vous avez "
+"ouvert a été modifié (peut-être parce qu’un autre programme l’a modifié), il "
+"le recharge automatiquement et vous affiche la version la plus récente."
 
 #. (itstool) path: page/p
 #: C/reload.page:29
@@ -1597,7 +1600,7 @@ msgstr "Saisissez les numéros des pages dans cet ordre : <_:item-1/>"
 #. (itstool) path: info/desc
 #: C/develop.page:7
 msgid "Improve <app>Document Viewer</app>."
-msgstr "Améliorer <app>Visionneur de documents</app>."
+msgstr "Améliorez <app>Visionneur de documents</app>."
 
 #. (itstool) path: credit/years
 #: C/develop.page:12 C/translate.page:12 C/documentation.page:11
@@ -1615,8 +1618,8 @@ msgid ""
 "<app>Document Viewer</app> is developed and maintained by a volunteer "
 "community. You are welcome to participate."
 msgstr ""
-"<app>Visionneur de documents</app> est développé et maintenu par une "
-"communauté de volontaires. Votre contribution est la bienvenue."
+"Une communauté de bénévoles assure le développement et la maintenance de "
+"<app>Visionneur de documents</app>. Votre contribution est la bienvenue."
 
 #. (itstool) path: page/p
 #: C/develop.page:23
@@ -1630,13 +1633,12 @@ msgid ""
 "href=\"https://discourse.gnome.org/tag/papers\">GNOME Discourse</link>."
 msgstr ""
 "Si vous voulez <link href=\"https://wiki.gnome.org/Apps/Papers\">aider au "
-"développement de <app>Visionneur de documents</app></link>, vous pouvez vous "
-"mettre en contact avec les développeurs en utilisant <link href=\"https://"
-"matrix.to/#/#papers:gnome.org\">#papers:gnome.org</link> sur <link "
-"xref=\"help:gnome-help/help-matrix\">Matrix</link>, ou <link href=\"https://"
-"web.libera.chat/#gnome-papers\">#gnome-papers</link> sur irc.libera.chat, ou "
-"via le <link href=\"https://discourse.gnome.org/tag/papers\">Discourse de "
-"GNOME</link>."
+"développement de <app>Visionneur de documents</app></link>, vous pouvez "
+"contacter les développeurs en utilisant <link href=\"https://matrix.to/#/"
+"#papers:gnome.org\">#papers:gnome.org</link> sur <link xref=\"help:gnome-"
+"help/help-matrix\">Matrix</link>, ou <link href=\"https://web.libera.chat/"
+"#gnome-papers\">#gnome-papers</link> sur irc.libera.chat, ou via le <link "
+"href=\"https://discourse.gnome.org/tag/papers\">Discourse de GNOME</link>."
 
 #. (itstool) path: info/desc
 #: C/finding.page:29
@@ -1769,12 +1771,12 @@ msgid ""
 "It may also contain different characters than the original selection. This "
 "often happens when copying text from a PDF document with multiple columns."
 msgstr ""
-"Si vous copiez le texte mis en surbrillance dans un document en utilisant "
-"<app>Visionneur de documents</app> et que vous le collez ensuite dans une "
-"autre application, il se peut que le formatage soit modifié. Il est "
-"également possible qu’il apparaisse des caractères différents que ceux de la "
-"sélection de départ. Cela se produit fréquemment lors de la copie de texte à "
-"partir d’un document PDF contenant plusieurs colonnes."
+"Si vous surlignez et copiez du texte dans un document ouvert avec "
+"<app>Visionneur de documents</app>, puis que vous le collez dans une autre "
+"application, il se peut que le formatage soit modifié. Il est également "
+"possible qu’il apparaisse des caractères différents de ceux de la sélection "
+"de départ. Cela se produit fréquemment lors de la copie de texte à partir "
+"d’un document PDF contenant plusieurs colonnes."
 
 #. (itstool) path: page/p
 #: C/textselection.page:29
@@ -2044,7 +2046,7 @@ msgstr ""
 #: C/duplex-4pages.page:7
 msgctxt "sort"
 msgid "04-Page Booklet"
-msgstr "Livret de 04 pages"
+msgstr "Livret de 4 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-4pages.page:8
@@ -2065,7 +2067,7 @@ msgstr "Saisissez les numéros des pages dans cet ordre : 4, 1, 2, 3"
 #: C/duplex-7pages.page:7
 msgctxt "sort"
 msgid "07-Page Booklet"
-msgstr "Livret de 07 pages"
+msgstr "Livret de 7 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-7pages.page:8
@@ -2165,7 +2167,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/translate.page:7
 msgid "Localize <app>Document Viewer</app>."
-msgstr "Traduire <app>Visionneur de documents</app> dans votre langue."
+msgstr "Traduisez <app>Visionneur de documents</app> dans votre langue."
 
 #. (itstool) path: credit/name
 #: C/translate.page:15
@@ -2184,9 +2186,9 @@ msgid ""
 "translated by a world-wide volunteer community. You are welcome to "
 "participate."
 msgstr ""
-"L’interface utilisateur et la documentation de <app>Visionneur de documents</"
-"app> sont actuellement traduites par une communauté de volontaires dans le "
-"monde entier. Votre contribution est la bienvenue."
+"Une communauté de bénévoles du monde entier assure la traduction de "
+"l’interface utilisateur et de la documentation de <app>Visionneur de "
+"documents</app>. Votre contribution est la bienvenue."
 
 #. (itstool) path: page/p
 #: C/translate.page:27
@@ -2320,8 +2322,7 @@ msgid ""
 "annotations using <app>Document Viewer</app>."
 msgstr ""
 "Une annotation est une note ou un commentaire qui est ajouté à un document "
-"PDF. Vous pouvez ajouter des annotations en utilisant <app>Visionneur de "
-"documents</app>."
+"PDF. <app>Visionneur de documents</app> permet d’ajouter des annotations."
 
 #. (itstool) path: page/p
 #: C/annotations.page:36
@@ -2451,7 +2452,7 @@ msgid ""
 msgstr ""
 "Enregistrez les modifications apportées à un nouveau document en cliquant "
 "sur le bouton menu en haut à droite, puis sur <gui "
-"style=\"menuitem\">Enregistrer sous</gui>."
+"style=\"menuitem\">Enregistrer sous…</gui>."
 
 #. (itstool) path: info/desc
 #: C/print-select.page:7
@@ -2497,16 +2498,16 @@ msgid ""
 "<app>Document Viewer</app> or any other PDF viewer <em>that supports "
 "annotations</em>:"
 msgstr ""
-"Pour enregistrer une copie de votre PDF annoté afin de l’afficher plus tard "
-"en utilisant <app>Visionneur de documents</app> ou n’importe quel autre "
-"visionneur de PDF <em>qui prend en charge les annotations</em> :"
+"Pour enregistrer une copie de votre PDF annoté afin de le consulter plus "
+"tard avec <app>Visionneur de documents</app> ou tout autre visionneur de PDF "
+"<em>qui prend en charge les annotations</em> :"
 
 #. (itstool) path: item/p
 #: C/annotations-save.page:31
 msgid "Click <guiseq><gui>File options</gui><gui>Save As…</gui></guiseq>"
 msgstr ""
-"Cliquez sur <guiseq><gui>Options des fichiers</gui><gui>Enregistrer sous</"
-"gui></guiseq>"
+"Cliquez sur <guiseq><gui>Menu du document</gui><gui>Enregistrer sous…</gui></"
+"guiseq>"
 
 #. (itstool) path: item/p
 #: C/annotations-save.page:36
@@ -2558,11 +2559,11 @@ msgid ""
 "that page. Click on the annotation you are interested in, and <app>Document "
 "Viewer</app> will navigate to the location of the annotation in the document."
 msgstr ""
-"Pour se déplacer rapidement à l’emplacement d’une annotation particulière, "
+"Pour vous rendre rapidement à l’emplacement d’une annotation particulière, "
 "cliquez sur la flèche à gauche du numéro de page. La liste des annotations "
 "de cette page apparaît. Cliquez sur l’annotation qui vous intéresse et "
-"<app>Visionneur de documents</app> se déplace dans le document là où se "
-"trouve l’annotation."
+"<app>Visionneur de documents</app> se rendra à l’emplacement de cette "
+"annotation dans le document."
 
 #. (itstool) path: page/media
 #. This is a reference to an external file such as an image or video. When
@@ -2731,11 +2732,10 @@ msgid ""
 "<app>Document Viewer</app> overrides this restriction by default, but you "
 "may want to check that it hasn't been disabled:"
 msgstr ""
-"Certains documents PDF possèdent un paramètre qui vous empêche de les "
-"imprimer. Les auteurs peuvent définir cette restriction d’impression "
-"lorsqu’ils écrivent un document. <app>Visionneur de documents</app> "
-"outrepasse par défaut cette restriction, mais il se peut que vous souhaitiez "
-"vérifier que cela n’a pas été désactivé :"
+"Certains documents PDF sont paramétrés pour qu’on ne puisse pas les "
+"imprimer. Un auteur peut définir cette restriction d’impression lorsqu’il "
+"écrit un document. <app>Visionneur de documents</app> outrepasse par défaut "
+"cette restriction, mais vous pouvez vérifier que cela n’a pas été désactivé :"
 
 #. (itstool) path: note/p
 #: C/noprint.page:83
@@ -2786,8 +2786,8 @@ msgstr "Vérifiez que l’option <gui>override-restrictions</gui> est cochée."
 msgid ""
 "Go back to <app>Document Viewer</app> and try to print the document again."
 msgstr ""
-"Retournez dans <app>Visionneur de documents</app> et essayez d’imprimer "
-"le document à nouveau."
+"Retournez dans <app>Visionneur de documents</app> et réessayez d’imprimer le "
+"document."
 
 #. (itstool) path: info/desc
 #: C/documentation.page:7
@@ -2805,8 +2805,8 @@ msgid ""
 "The <app>Document Viewer</app> documentation is maintained by a volunteer "
 "community. You are welcome to participate."
 msgstr ""
-"La documentation de <app>Visionneur de documents</app> est maintenue par une "
-"communauté de volontaires. Votre participation est la bienvenue."
+"Une communauté de bénévoles assure la mise à jour de la documentation de "
+"<app>Visionneur de documents</app>. Votre participation est la bienvenue."
 
 #. (itstool) path: page/p
 #: C/documentation.page:23
@@ -2849,7 +2849,7 @@ msgstr "Livret de 12 pages"
 #: C/singlesided-5-8pages.page:7
 msgctxt "sort"
 msgid "05-Page or 4-Page Booklet"
-msgstr "Livret de 04 ou 5 pages"
+msgstr "Livret de 4 ou 5 pages"
 
 #. (itstool) path: info/desc
 #: C/singlesided-5-8pages.page:8
@@ -2875,7 +2875,7 @@ msgstr ""
 #: C/duplex-3pages.page:7
 msgctxt "sort"
 msgid "03-Page Booklet"
-msgstr "Livret de 03 pages"
+msgstr "Livret de 3 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-3pages.page:8
@@ -2918,7 +2918,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/introduction.page:18
 msgid "Introduction to the <em>Papers Document Viewer</em>."
-msgstr "Introduction à <em>Visionneur de documents Papiers</em>."
+msgstr "Introduction au <em>Visionneur de documents Papiers</em>."
 
 #. (itstool) path: page/title
 #: C/introduction.page:21
@@ -2960,9 +2960,9 @@ msgid ""
 "viewing PDF documents. Learn how to get started with <app>Papers</app> and "
 "its features."
 msgstr ""
-"<app>Visionneur de documents</app>, anciennement <app>Papiers</app>, est "
-"fait pour afficher les documents PDF. Apprenez comment démarrer avec ses "
-"fonctionnalités."
+"<app>Visionneur de documents</app>, connu sous le nom officiel de "
+"<app>Papiers</app>, sert à afficher les documents PDF. Découvrez comment "
+"utiliser <app>Papiers</app> et ses fonctionnalités."
 
 #. (itstool) path: page/title
 #: C/index.page:30
@@ -3018,7 +3018,7 @@ msgstr "Comment participer"
 #: C/duplex-9pages.page:7
 msgctxt "sort"
 msgid "09-Page Booklet"
-msgstr "Livret de 09 pages"
+msgstr "Livret de 9 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-9pages.page:8
@@ -3106,7 +3106,7 @@ msgid ""
 "style=\"menuitem\">Print…</gui>."
 msgstr ""
 "Ouvrez le menu en haut à droite de la fenêtre, puis cliquez sur <gui "
-"style=\"menuitem\">Imprimer</gui>."
+"style=\"menuitem\">Imprimer…</gui>."
 
 #. (itstool) path: item/p
 #: C/print-pagescaling.page:34
@@ -3177,7 +3177,7 @@ msgid ""
 "Double clicking PDF, .djvu, and Comic Book Archive files opens them in "
 "<app>Document Viewer</app> by default."
 msgstr ""
-"Un double-clic ouvre les fichiers PDF,.djvu, et les archives Comic Book dans "
+"Un double-clic ouvre les fichiers PDF,.djvu, et les archives Comic Book avec "
 "<app>Visionneur de documents</app> par défaut."
 
 #. (itstool) path: item/p
@@ -3213,7 +3213,7 @@ msgid ""
 "the <gui>Open Document</gui> dialog, choose the file which you wish to open, "
 "and click <gui>Open</gui>. The file will open in the same window."
 msgstr ""
-"Appuyer sur le bouton <gui>Ouvrir</gui> situé dans le coin supérieur gauche "
+"Cliquez sur le bouton <gui>Ouvrir…</gui> situé dans le coin supérieur gauche "
 "de la fenêtre. Dans la boîte de dialogue <gui>Ouvrir un document</gui>, "
 "choisissez le fichier que vous souhaitez ouvrir et cliquez sur <gui>Ouvrir</"
 "gui>. Le fichier s’ouvrira dans la même fenêtre."
@@ -3312,16 +3312,16 @@ msgid ""
 "message. Click <gui>Close</gui> to return to the <app>Document Viewer</app> "
 "window."
 msgstr ""
-"Si vous essayez d’ouvrir un document dans un format que <app>Visionneur "
-"de documents</app> ne reconnaît pas, vous obtenez un message d’erreur "
-"« Impossible d’ouvrir le document ». Cliquez sur <gui>Fermer</gui> pour "
-"retourner dans la fenêtre de <app>Visionneur de documents</app>."
+"Si vous essayez d’ouvrir un document dans un format que <app>Visionneur de "
+"documents</app> ne reconnaît pas, le message d’erreur « Impossible d’ouvrir "
+"le document » s’affichera. Cliquez sur <gui>Fermer</gui> pour revenir à la "
+"fenêtre de <app>Visionneur de documents</app>."
 
 #. (itstool) path: info/title
 #: C/singlesided-3-4pages.page:7
 msgctxt "sort"
 msgid "03-Page or 4-Page Booklet"
-msgstr "Livret de 03 ou 4 pages"
+msgstr "Livret de 3 ou 4 pages"
 
 #. (itstool) path: info/desc
 #: C/singlesided-3-4pages.page:8
@@ -3380,9 +3380,9 @@ msgid ""
 "<gui>Save As…</gui> or press <keyseq><key>Ctrl</key><key>S</key></keyseq> on "
 "your keyboard."
 msgstr ""
-"Cliquez sur le menu <gui>Options des fichiers</gui> situé dans le coin "
-"supérieur droit et sélectionnez <gui>Enregistrer sous</gui>, ou appuyez sur "
-"les touches <keyseq><key>Ctrl</key><key>S</key></keyseq> de votre clavier."
+"Cliquez sur <gui>Menu du document</gui> situé dans le coin supérieur droit "
+"et sélectionnez <gui>Enregistrer sous…</gui>, ou appuyez sur les touches "
+"<keyseq><key>Ctrl</key><key>S</key></keyseq> de votre clavier."
 
 #. (itstool) path: item/p
 #: C/forms-saving.page:44
@@ -3486,7 +3486,7 @@ msgstr ""
 #: C/print-differentsize.page:24
 msgid "Printing a document on paper of a different size or orientation."
 msgstr ""
-"Imprimer un document sur du papier de taille ou orientation différente."
+"Imprimer un document sur du papier de taille ou d’orientation différente."
 
 #. (itstool) path: page/title
 #: C/print-differentsize.page:28
@@ -3578,8 +3578,7 @@ msgstr "Comment et où signaler des problèmes."
 #. (itstool) path: page/title
 #: C/bug-filing.page:19
 msgid "File a bug against <app>Document Viewer</app>"
-msgstr ""
-"Renseignement d’un bogue concernant <app>Visionneur de documents</app>"
+msgstr "Signalement d’un bogue dans <app>Visionneur de documents</app>"
 
 #. (itstool) path: page/p
 #: C/bug-filing.page:20
@@ -3589,11 +3588,11 @@ msgid ""
 "report</em>. To file a bug, go to <link href=\"https://gitlab.gnome.org/"
 "GNOME/papers/issues/\"/>."
 msgstr ""
-"<app>Visionneur de documents</app> est maintenu par une communauté de "
-"volontaires. Votre participation est la bienvenue. Si vous remarquez un "
-"problème, vous pouvez remplir un <em>rapport d’anomalie</em>. Pour signaler "
-"un bogue, visitez <link href=\"https://gitlab.gnome.org/GNOME/Incubator/"
-"papers/issues/\"/>."
+"Une communauté de bénévoles assure la maintenance de <app>Visionneur de "
+"documents</app>. Votre participation est la bienvenue. Si vous remarquez un "
+"problème, vous pouvez remplir un <em>rapport de bogue</em>. Pour signaler un "
+"bogue, rendez-vous sur <link href=\"https://gitlab.gnome.org/GNOME/papers/"
+"issues/\"/>."
 
 #. (itstool) path: page/p
 #: C/bug-filing.page:23
@@ -3618,7 +3617,7 @@ msgstr ""
 "connecter, de signaler des bogues et de faire des commentaires. C’est "
 "également nécessaire afin de pouvoir recevoir des mises à jour du statut de "
 "votre bogue par courriel. Si vous n’avez pas déjà un compte, cliquez sur le "
-"lien <gui>Sign in / Register</gui> pour en créer un."
+"lien <gui>Connexion</gui> pour en créer un."
 
 #. (itstool) path: page/p
 #: C/bug-filing.page:29
@@ -3629,12 +3628,12 @@ msgid ""
 "please <link href=\"https://gitlab.gnome.org/GNOME/papers/issues\">browse</"
 "link> for the bug to see if it already exists."
 msgstr ""
-"Une fois inscrit, connectez-vous, et cliquez sur <gui>New issue</gui>. Avant "
-"de signaler un bogue, il est important de lire le <link href=\"https://"
+"Une fois inscrit, connectez-vous, et cliquez sur <gui>Nouvel élément</gui>. "
+"Avant de signaler un bogue, il est important de lire le <link href=\"https://"
 "wiki.gnome.org/GettingInTouch/BugReportingGuidelines\">guide sur les "
-"rapports de bogue</link> et de cliquer sur <link href=\"https://"
-"gitlab.gnome.org/GNOME/papers/issues\">Browse (rechercher)</link> pour voir "
-"si le bogue n’est pas déjà signalé."
+"rapports de bogue</link>, et de parcourir la <link href=\"https://"
+"gitlab.gnome.org/GNOME/papers/issues\">liste de tickets</link> à l’aide de "
+"la barre de recherche pour voir si le bogue n’a pas déjà été signalé."
 
 #. (itstool) path: page/p
 #: C/bug-filing.page:33
@@ -3661,7 +3660,7 @@ msgstr ""
 #: C/duplex-5pages.page:7
 msgctxt "sort"
 msgid "05-Page Booklet"
-msgstr "Livret de 05 pages"
+msgstr "Livret de 5 pages"
 
 #. (itstool) path: info/desc
 #: C/duplex-5pages.page:8
@@ -3696,14 +3695,14 @@ msgstr ""
 #: C/editing.page:7
 msgid "You can't use <app>Document Viewer</app> to edit files."
 msgstr ""
-"Vous ne pouvez pas utiliser <app>Visionneur de documents</app> pour "
+"Il n’est pas possible d’utiliser <app>Visionneur de documents</app> pour "
 "modifier des fichiers."
 
 #. (itstool) path: page/title
 #: C/editing.page:21
 msgid "Can I edit documents in Document Viewer?"
 msgstr ""
-"Est-il possible de modifier les documents dans Visionneur de documents ?"
+"Est-il possible de modifier des documents dans Visionneur de documents ?"
 
 #. (itstool) path: page/p
 #: C/editing.page:24
@@ -3712,9 +3711,9 @@ msgid ""
 "need to use the appropriate editing application for the type of file you "
 "want to change."
 msgstr ""
-"<app>Visionneur de documents</app> ne peut pas être utilisé pour apporter "
-"des modifications aux documents. Vous devez utiliser l’application d’édition "
-"appropriée au type de fichier que vous voulez modifier."
+"Il n’est pas possible d’utiliser <app>Visionneur de documents</app> pour "
+"apporter des modifications aux documents. Vous devez utiliser une "
+"application d’édition appropriée au type de fichier que vous voulez modifier."
 
 #. (itstool) path: note/p
 #: C/editing.page:30
@@ -3729,3 +3728,499 @@ msgstr ""
 "<app>LibreOffice Draw</app> ou <app>Okular</app>. Par ailleurs, "
 "<app>pdfarranger</app> permet de réorganiser ou de supprimer des pages et de "
 "fusionner des fichiers."
+
+#~ msgid ""
+#~ "This works by opening the file in <app>Papers</app> and \"printing\" the "
+#~ "document as an SVG file."
+#~ msgstr ""
+#~ "Il suffit d’ouvrir le fichier dans <app>Papiers</app> et « d’imprimer » "
+#~ "le document en tant que fichier SVG."
+
+#~ msgid "Save current settings as default for new documents."
+#~ msgstr ""
+#~ "Enregistrer les paramètres actuels comme paramètres par défaut pour les "
+#~ "nouveaux documents."
+
+#~ msgid "Sindhu S"
+#~ msgstr "Sindhu S"
+
+#~ msgid "Change default settings"
+#~ msgstr "Modification des paramètres par défaut"
+
+#~ msgid ""
+#~ "When a document is opened for the first time, default settings, such as "
+#~ "zoom and page view preferences, are applied. Any changes you make to "
+#~ "these settings are saved for the document."
+#~ msgstr ""
+#~ "Lorsqu’un document est ouvert pour la première fois, les paramètres par "
+#~ "défaut, comme les préférences de zoom et d’affichage de la page, "
+#~ "s’appliquent. Toutes modifications apportées à ces paramètres sont "
+#~ "enregistrées pour le document."
+
+#~ msgid ""
+#~ "You can save the settings which you are currently using as default for "
+#~ "all new documents by pressing the menu button in the top-right corner of "
+#~ "the window and selecting <gui style=\"menuitem\">Save Current Settings as "
+#~ "Default</gui>."
+#~ msgstr ""
+#~ "Vous pouvez enregistrer les paramètres qui sont actuellement utilisés par "
+#~ "défaut pour tous les nouveaux documents en cliquant sur le bouton de menu "
+#~ "situé dans le coin supérieur droit de la fenêtre, puis en sélectionnant "
+#~ "<gui style=\"menuitem\">Se souvenir des réglages actuels</gui>."
+
+#~ msgid ""
+#~ "The new default settings do not override settings of previously opened "
+#~ "documents, they are applied only to documents opened for the first time."
+#~ msgstr ""
+#~ "Les nouveaux paramètres par défaut ne remplacent pas les paramètres des "
+#~ "documents précédemment ouverts, ils sont appliqués seulement aux "
+#~ "documents ouverts pour la première fois."
+
+#~ msgid "Using SyncTeX with the LaTeX Beamer class."
+#~ msgstr "Utiliser SyncTeX avec la classe Beamer de LaTeX."
+
+#~ msgid "Beamer with SyncTeX"
+#~ msgstr "Classe Beamer avec SyncTeX"
+
+#~ msgid "Beamer is a LaTeX class for creating slides for presentations."
+#~ msgstr ""
+#~ "Beamer est une classe LaTeX qui permet de créer des diapositives pour "
+#~ "faire des présentations."
+
+#~ msgid ""
+#~ "You can perform forward and backward search in a <em>Beamer-LaTeX</em> "
+#~ "presentation in a similar fashion to <link xref=\"synctex-"
+#~ "search\">searching</link> through other TeX files compiled with SyncTeX. "
+#~ "However the search brings you to the corresponding frame (slide), not "
+#~ "necessarily the associated line of text. This difference is outlined in "
+#~ "detail below."
+#~ msgstr ""
+#~ "Vous pouvez réaliser des recherches en avant et en arrière dans une "
+#~ "présentation <em>Beamer-LaTeX</em> de la même manière qu’une <link "
+#~ "xref=\"synctex-search\">recherche</link> à travers d’autres fichiers TeX "
+#~ "compilés avec SyncTeX. Cependant, la recherche vous place dans la "
+#~ "diapositive correspondante (« frame ») et pas nécessairement à la ligne "
+#~ "associée au texte. Cette différence est expliquée en détail ci-dessous."
+
+#~ msgid ""
+#~ "Forward search: from Beamer-LaTeX source to PDF (<app>gedit</app> to the "
+#~ "<app>document viewer</app>)"
+#~ msgstr ""
+#~ "Recherche en avant : d’une source Beamer-LaTeX vers PDF (de <app>gedit</"
+#~ "app> vers le <app>Visionneur de documents</app>)"
+
+#~ msgid ""
+#~ "With <link xref=\"synctex-search#forward-search\">forward search</link>, "
+#~ "you can click on a specific line of Beamer-LaTeX source code. The "
+#~ "<em>top</em> of the corresponding slide in the PDF will be outlined in "
+#~ "red. This will often be the <em>frametitle</em>."
+#~ msgstr ""
+#~ "Avec <link xref=\"synctex-search#forward-search\">Recherche en avant</"
+#~ "link>, vous pouvez cliquer sur une ligne spécifique du code source Beamer-"
+#~ "LaTeX. Le <em>haut</em> de la diapositive correspondante dans le PDF est "
+#~ "entouré en rouge. C’est très souvent le <em>titre de la diapositive</em> "
+#~ "(frametitle)."
+
+#~ msgid ""
+#~ "Backward search: from PDF to Beamer-LaTeX source (from the <app>document "
+#~ "viewer</app> to <app>gedit</app>)"
+#~ msgstr ""
+#~ "Recherche en arrière : du PDF vers la source Beamer-LaTeX (du "
+#~ "<app>Visionneur de documents</app> vers <app>gedit</app>)"
+
+#~ msgid ""
+#~ "With <link xref=\"synctex-search#backward-search\">backward search</"
+#~ "link>, you click on some text in a frame, and the corresponding line of "
+#~ "LaTex code that ends that particular frame is highlighted. This will "
+#~ "usually be the line:"
+#~ msgstr ""
+#~ "Avec <link xref=\"synctex-search#forward-search\">Recherche en arrière</"
+#~ "link>, vous cliquez sur du texte dans une diapositive et la ligne "
+#~ "correspondante du code LaTeX, qui indique la fin de cette diapositive, "
+#~ "est mise en surbrillance. C’est en général la ligne :"
+
+#, no-wrap
+#~ msgid "\\end{frame}"
+#~ msgstr "\\end{frame}"
+
+#~ msgid "corresponding to the frame you clicked on."
+#~ msgstr "correspondant à la diapositive sur laquelle vous avez cliqué."
+
+#~ msgid "You can convert a document to PostScript."
+#~ msgstr "Vous pouvez convertir un document en PostScript."
+
+#~ msgid "Converting a document to PostScript"
+#~ msgstr "Conversion d’un document en PostScript"
+
+#~ msgid ""
+#~ "You can convert documents of the following format types to PostScript "
+#~ "files:"
+#~ msgstr ""
+#~ "Vous pouvez convertir des documents des types de format suivants en "
+#~ "fichiers PostScript :"
+
+#~ msgid ""
+#~ "This works by opening the file in <app>Document Viewer</app> and "
+#~ "\"printing\" the document as a PostScript file."
+#~ msgstr ""
+#~ "Il suffit d’ouvrir le fichier dans le <app>Visionneur de documents</app> "
+#~ "et « d’imprimer » le document en tant que fichier PostScript."
+
+#~ msgid ""
+#~ "Click the <gui>File options</gui> menu in the top right corner and select "
+#~ "<gui>Print</gui> or press <keyseq><key>Ctrl</key><key>P</key></keyseq> "
+#~ "and go to the <gui>General</gui> tab."
+#~ msgstr ""
+#~ "Ouvrez le menu <gui>Options des fichiers</gui> situé dans le coin "
+#~ "supérieur droit et sélectionnez <gui>Imprimer</gui>, ou appuyez sur les "
+#~ "touches <keyseq><key>Ctrl</key><key>P</key></keyseq> de votre clavier et "
+#~ "allez à l’onglet <gui>Général</gui>."
+
+#~ msgid ""
+#~ "Select <gui>Print to File</gui> and choose PostScript as the <gui>Output "
+#~ "format</gui>."
+#~ msgstr ""
+#~ "Choisissez <gui>Imprimer dans un fichier</gui> et sélectionnez PostScript "
+#~ "comme <gui>Format de sortie</gui>."
+
+#~ msgid ""
+#~ "Choose a name and folder in which to save the file, then click "
+#~ "<gui>Print</gui>. The PostScript file will be saved in the folder you "
+#~ "chose."
+#~ msgstr ""
+#~ "Choisissez un nom et un dossier où enregistrer le fichier, puis cliquez "
+#~ "sur <gui>Imprimer</gui>. Le fichier PostScript est enregistré dans le "
+#~ "dossier que vous avez sélectionné."
+
+#~ msgid "SyncTeX support is available."
+#~ msgstr "La prise en charge de SyncTeX est disponible."
+
+#~ msgid "What is SyncTeX?"
+#~ msgstr "Qu’est-ce que SyncTeX ?"
+
+#~ msgid ""
+#~ "SyncTeX is a method that enables synchronization between a TeX source "
+#~ "file and the resulting PDF output."
+#~ msgstr ""
+#~ "SyncTeX est une manière de permettre la synchronisation entre le fichier "
+#~ "source TeX et la sortie PDF résultante."
+
+#~ msgid "Which editor can you use to edit your TEX file?"
+#~ msgstr "Quel éditeur utiliser pour saisir vos fichiers TeX ?"
+
+#~ msgid "Supported editors"
+#~ msgstr "Éditeurs pris en charge"
+
+#~ msgid "<app>gedit</app>"
+#~ msgstr "<app>gedit</app>"
+
+#~ msgid ""
+#~ "<link xref=\"synctex-search#forward-search\">Forward Search</link> (from "
+#~ "<app>gedit</app> to the <app>document viewer</app>) and <link "
+#~ "xref=\"synctex-search#backward-search\">Backward search</link> (from the "
+#~ "<app>document viewer</app> to <app>gedit</app>) are both supported."
+#~ msgstr ""
+#~ "<link xref=\"synctex-search#forward-search\">Recherche en avant</link> "
+#~ "(de <app>gedit</app> vers le <app>Visionneur de documents</app>) et <link "
+#~ "xref=\"synctex-search#backward-search\">Recherche en arrière</link> (du "
+#~ "<app>Visionneur de documents</app> vers <app>gedit</app>) sont tous les "
+#~ "deux pris en charge."
+
+#~ msgid "Vim-latex"
+#~ msgstr "Vim-latex"
+
+#~ msgid ""
+#~ "The <app>gedit</app> plugin contains a python script "
+#~ "(<file>evince_dbus.py</file>) that can be used to get SyncTeX working "
+#~ "with Vim. In order to use vim-latex together with the <app>document "
+#~ "viewer</app> you need to follow the next steps:"
+#~ msgstr ""
+#~ "Le greffon <app>gedit</app> contient un script python "
+#~ "(<file>evince_dbus.py</file>) qui peut être utilisé pour faire "
+#~ "fonctionner SyncTeX avec Vim. Afin d’utiliser vim-latex conjointement "
+#~ "avec le <app>Visionneur de documents</app>, vous devez suivre les étapes "
+#~ "suivantes :"
+
+#~ msgid ""
+#~ "Copy the <file>evince_dbus.py</file> to some directory in your path and "
+#~ "give it +x permissions."
+#~ msgstr ""
+#~ "Copiez le fichier <file>evince_dbus.py</file> dans un répertoire contenu "
+#~ "dans votre variable d’environnement PATH et donnez-lui les permissions +x."
+
+# Caractère deux-points justifié dans la traduction (Charles).
+#~ msgid "Modify your <file>~/.vimrc</file> file and add the following lines."
+#~ msgstr ""
+#~ "Modifiez votre fichier <file>~/.vimrc</file> et ajoutez les lignes "
+#~ "suivantes :"
+
+#, no-wrap
+#~ msgid ""
+#~ "\n"
+#~ "let g:Tex_ViewRule_pdf = 'evince_dbus.py'\n"
+#~ "let g:Tex_DefaultTargetFormat = 'pdf'\n"
+#~ "let g:Tex_CompileRule_pdf = 'pdflatex --synctex=1 -interaction=nonstopmode $*'\n"
+#~ msgstr ""
+#~ "\n"
+#~ "let g:Tex_ViewRule_pdf = 'evince_dbus.py'\n"
+#~ "let g:Tex_DefaultTargetFormat = 'pdf'\n"
+#~ "let g:Tex_CompileRule_pdf = 'pdflatex --synctex=1 -interaction=nonstopmode $*'\n"
+
+#~ msgid ""
+#~ "Now you can use Forward search from vim-latex by typing \\ls. Backward "
+#~ "search is not yet supported."
+#~ msgstr ""
+#~ "Vous pouvez maintenant utiliser Recherche en avant à partir de vim-latex "
+#~ "en saisissant \\ls. La recherche en arrière n’est pas encore prise en "
+#~ "charge."
+
+#~ msgid "How to add support for SyncTeX."
+#~ msgstr "Comment prendre en charge SyncTeX."
+
+#~ msgid "Germán Poo-Caamaño"
+#~ msgstr "Germán Poo-Caamaño"
+
+#~ msgid "Set-up SyncTeX"
+#~ msgstr "Configuration de SyncTeX"
+
+#~ msgid ""
+#~ "The following packages need to be installed in order to add support for "
+#~ "SyncTeX:"
+#~ msgstr ""
+#~ "Les paquets suivants doivent être installés afin d’ajouter la prise en "
+#~ "charge de SyncTeX :"
+
+#~ msgid "A LaTeX engine with SyncTeX support, such as <app>pdflatex</app>."
+#~ msgstr ""
+#~ "Un moteur LaTeX avec la prise en charge de SyncTeX, comme <app>pdflatex</"
+#~ "app>."
+
+#~ msgid ""
+#~ "A text editor with SyncTeX support, such as <app>gedit</app> with gedit-"
+#~ "plugins installed."
+#~ msgstr ""
+#~ "Un éditeur de texte avec prise en charge de SyncTeX, comme <app>gedit</"
+#~ "app> avec les greffons « gedit-plugins » installés."
+
+#~ msgid "In <app>gedit</app>, enable the SyncTeX Plugin:"
+#~ msgstr "Dans <app>gedit</app>, activez le greffon SyncTeX :"
+
+#~ msgid ""
+#~ "Press the menu button in the top-right corner of the window and select "
+#~ "<gui style=\"menuitem\">Preferences</gui>."
+#~ msgstr ""
+#~ "Cliquez sur le bouton menu dans le coin supérieur droit de la fenêtre, "
+#~ "puis sélectionnez <gui style=\"menuitem\">Préférences</gui>."
+
+#~ msgid "Select the <gui>Plugins</gui> tab."
+#~ msgstr "Sélectionnez l’onglet <gui>Greffons</gui>."
+
+#~ msgid "Check <gui>SyncTeX</gui>."
+#~ msgstr "Cochez <gui>SyncTeX</gui>."
+
+# Point final justifié dans la traduction (Charles).
+#~ msgid "How to compile your TeX document with SyncTeX"
+#~ msgstr "Comment compiler votre document TeX avec SyncTeX."
+
+#~ msgid "Compile TeX with SyncTeX"
+#~ msgstr "Compilation de TeX avec SyncTeX"
+
+#~ msgid ""
+#~ "Adding the line <em>\\synctex=1</em> in the preamble of your TeX file "
+#~ "will trigger synchronization with SyncTeX."
+#~ msgstr ""
+#~ "L’ajout de la ligne <em>\\synctex=1</em> dans le préambule de votre "
+#~ "fichier TeX déclenche la synchronisation avec SyncTeX."
+
+#, no-wrap
+#~ msgid ""
+#~ "\n"
+#~ "\\documentclass{article}\n"
+#~ "\\synctex=1\n"
+#~ "\\usepackage{fullpage}\n"
+#~ "\\begin{document}\n"
+#~ "...\n"
+#~ "\\end{document}\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\\documentclass{article}\n"
+#~ "\\synctex=1\n"
+#~ "\\usepackage{fullpage}\n"
+#~ "\\begin{document}\n"
+#~ "...\n"
+#~ "\\end{document}\n"
+
+#~ msgid ""
+#~ "Alternatively, you can run the pdflatex command with the <em>-synctex=1</"
+#~ "em> option:"
+#~ msgstr ""
+#~ "Vous pouvez également exécuter la commande pdflatex avec l’option <em>-"
+#~ "synctex=1</em> :"
+
+#, no-wrap
+#~ msgid "pdflatex -synctex=1 yourFile.tex"
+#~ msgstr "pdflatex -synctex=1 yourFile.tex"
+
+#~ msgid "Device Independent file format (.dvi)"
+#~ msgstr "Format de fichier Device Independent (.dvi)"
+
+#~ msgid "Open XML Paper Specification (.oxps, .xps)"
+#~ msgstr "Spécification Open XML pour les papiers (.oxps, .xps)"
+
+#~ msgid "PostScript (.ps)"
+#~ msgstr "PostScript (.ps)"
+
+#~ msgid "SyncTeX"
+#~ msgstr "SyncTeX"
+
+#~ msgid "You can convert a document to PDF by \"printing\" it to a file."
+#~ msgstr ""
+#~ "Vous pouvez convertir un document en PDF en « l’imprimant » dans un "
+#~ "fichier."
+
+#~ msgid "Converting a document to PDF"
+#~ msgstr "Conversion d’un document en PDF"
+
+#~ msgid ""
+#~ "You can convert documents of the following format types into PDF format:"
+#~ msgstr ""
+#~ "Vous pouvez convertir des documents des types de format suivants en PDF :"
+
+#~ msgid ""
+#~ "Choose a name and folder in which to save the file, then click "
+#~ "<gui>Print</gui>. The PDF will be saved in the folder you chose."
+#~ msgstr ""
+#~ "Choisissez un nom et un dossier où enregistrer le fichier, puis cliquez "
+#~ "sur <gui>Imprimer</gui>. Le PDF est enregistré dans le dossier que vous "
+#~ "avez sélectionné."
+
+#~ msgid ""
+#~ "You can't select text in PostScript or .dvi files, but you usually can do "
+#~ "this in PDF files. Converting .dvi or PostScript files to PDF will not "
+#~ "make the text selectable. This is because the text itself isn't stored in "
+#~ "the file (it's just an image of what the text looks like), so there is no "
+#~ "way to recover it and put it in the PDF. You can use <em>Optical "
+#~ "Character Recognition</em> (OCR) software to extract the text from files "
+#~ "if you need to."
+#~ msgstr ""
+#~ "Vous ne pouvez pas sélectionner du texte dans des fichiers PostScript "
+#~ "ou .dvi mais vous pouvez en général le faire dans les fichiers PDF. La "
+#~ "conversion de fichiers PostScript ou .dvi en PDF ne permet pas de rendre "
+#~ "le texte sélectionnable. La raison est que le texte lui-même n’est pas "
+#~ "enregistré dans le fichier (c’est juste un dessin à l’image du texte) "
+#~ "donc il n’y a pas de moyen de le récupérer et de le mettre dans le PDF. "
+#~ "Vous pouvez utiliser un logiciel de <em>Reconnaissance optique de "
+#~ "caractères</em> (ROC ou OCR en anglais) pour extraire le texte du fichier "
+#~ "si vous en avez le besoin."
+
+#~ msgid "Flip between the <app>document viewer</app> and <app>gedit</app>."
+#~ msgstr ""
+#~ "Naviguer entre le <app>Visionneur de documents</app> et <app>gedit</app>."
+
+#~ msgid "Search with SyncTeX"
+#~ msgstr "Recherche avec SyncTeX"
+
+#~ msgid ""
+#~ "After you <link xref=\"synctex-compile\">compile your TeX file with "
+#~ "SyncTeX</link>, you will be able to search. SyncTeX even supports forward "
+#~ "and backward search from an included file."
+#~ msgstr ""
+#~ "Après avoir <link xref=\"synctex-compile\">compilé votre fichier TeX avec "
+#~ "SyncTeX</link>, il vous est possible de faire des recherches. SyncTeX "
+#~ "prend même en charge la recherche en avant et en arrière à partir d’un "
+#~ "fichier inclus."
+
+#~ msgid ""
+#~ "Forward search: from TeX to PDF (from <app>gedit</app> to the "
+#~ "<app>document viewer</app>)"
+#~ msgstr ""
+#~ "Recherche en avant : de TeX vers PDF (de <app>gedit</app> vers le "
+#~ "<app>Visionneur de documents</app>)"
+
+#~ msgid ""
+#~ "Forward search allows you to click on a specific section of TeX source "
+#~ "code, and jump to the associated position in the PDF. To perform forward "
+#~ "search:"
+#~ msgstr ""
+#~ "La recherche en avant vous permet de cliquer sur un endroit spécifique du "
+#~ "code source TeX et de se rendre à la position associée dans le PDF. Pour "
+#~ "réaliser cette recherche en avant :"
+
+#~ msgid "Click on a line in the TeX file."
+#~ msgstr "Cliquez sur une ligne dans le fichier TeX."
+
+#~ msgid ""
+#~ "In <app>gedit</app>, click <guiseq><gui>Tools</gui> <gui>Forward Search</"
+#~ "gui></guiseq>. The corresponding line in the PDF will be outlined in red."
+#~ msgstr ""
+#~ "Dans <app>gedit</app>, cliquez sur <guiseq><gui>Outils</"
+#~ "gui><gui>Recherche en avant</gui></guiseq>. La ligne correspondante dans "
+#~ "le PDF est alors entourée en rouge."
+
+#~ msgid ""
+#~ "Alternatively, you can press <keyseq><key>Ctrl</key><key>Alt</key><key>F</"
+#~ "key></keyseq>, or <keyseq><key>Ctrl</key>left click</keyseq>. The "
+#~ "corresponding line in the PDF will be outlined in red."
+#~ msgstr ""
+#~ "Vous pouvez aussi appuyer sur <keyseq><key>Ctrl</key><key>Alt</"
+#~ "key><key>F</key></keyseq> ou <keyseq><key>Ctrl</key>clic gauche</keyseq>. "
+#~ "La ligne correspondante dans le PDF est alors entourée en rouge."
+
+#~ msgid ""
+#~ "If the corresponding PDF file is not open, performing a forward search "
+#~ "will open the PDF in the <app>document viewer</app>."
+#~ msgstr ""
+#~ "Si le fichier PDF correspondant n’est pas ouvert, la réalisation d’une "
+#~ "recherche en avant ouvre le PDF dans le <app>Visionneur de documents</"
+#~ "app>."
+
+#~ msgid "If you have a complex project with several TeX files you can put"
+#~ msgstr ""
+#~ "Si vous avez un projet complexe contenant plusieurs fichiers TeX, vous "
+#~ "pouvez mettre"
+
+#, no-wrap
+#~ msgid "% mainfile: mainfile.tex"
+#~ msgstr "% mainfile: mainfile.tex"
+
+#~ msgid ""
+#~ "either in the first or last three lines of each included TeX file, and "
+#~ "forward search will work. Backward search should always work, even if you "
+#~ "don't add the modeline."
+#~ msgstr ""
+#~ "soit en première ligne ou dans les trois dernières lignes de chaque "
+#~ "fichier TeX inclus et la recherche en avant fonctionnera. La recherche en "
+#~ "arrière doit toujours fonctionner même si vous n’ajoutez pas le "
+#~ "modificateur."
+
+#~ msgid ""
+#~ "Backward search: from PDF to TeX (from the <app>document viewer</app> to "
+#~ "<app>gedit</app>)"
+#~ msgstr ""
+#~ "Recherche en arrière : du PDF vers TeX (du <app>Visionneur de documents</"
+#~ "app> vers <app>gedit</app>)"
+
+#~ msgid ""
+#~ "Backward search allows you to click on a specific line in the PDF file, "
+#~ "and jump to the associated line in the TeX source code."
+#~ msgstr ""
+#~ "La recherche inverse vous permet de cliquer sur une ligne spécifique dans "
+#~ "le fichier PDF et de se rendre ainsi à la ligne associée dans le code "
+#~ "source TeX."
+
+#~ msgid ""
+#~ "You can perform a backward search by pressing <keyseq><key>Ctrl</key>left "
+#~ "click</keyseq> in the <app>document viewer</app>. The corresponding line "
+#~ "in the TeX source code will be highlighted."
+#~ msgstr ""
+#~ "Vous pouvez réaliser une recherche inverse en appuyant sur "
+#~ "<keyseq><key>Ctrl</key>clic gauche</keyseq> dans le <app>Visionneur de "
+#~ "documents</app>. La ligne correspondante dans le fichier source TeX est "
+#~ "mise en évidence."
+
+#~ msgid ""
+#~ "Click <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Plugins</gui></"
+#~ "guiseq> tab."
+#~ msgstr ""
+#~ "Cliquez sur l’onglet <guiseq><gui>Édition</gui><gui>Préférences</"
+#~ "gui><gui>Greffons</gui></guiseq>."

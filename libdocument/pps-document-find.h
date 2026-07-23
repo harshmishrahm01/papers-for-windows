@@ -37,7 +37,7 @@ struct _PpsFindRectangle {
 };
 
 PPS_PUBLIC
-GType pps_find_rectangle_get_type (void) G_GNUC_CONST;
+GType pps_find_rectangle_get_type (void);
 PPS_PUBLIC
 PpsFindRectangle *pps_find_rectangle_new (void);
 PPS_PUBLIC

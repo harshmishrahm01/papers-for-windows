@@ -1063,7 +1063,9 @@ pps_pixbuf_cache_get_selection_texture (PpsPixbufCache *pixbuf_cache,
 
 		g_clear_object (&job_info->selection_texture);
 
-		job_info->selection_texture = pps_document_misc_texture_from_surface (job_info->selection_surface);
+		if (job_info->selection_surface != NULL)
+			job_info->selection_texture =
+			    pps_document_misc_texture_from_surface (job_info->selection_surface);
 		g_object_unref (rc);
 	}
 	return job_info->selection_texture;

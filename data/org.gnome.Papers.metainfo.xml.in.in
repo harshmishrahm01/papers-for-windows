@@ -98,6 +98,23 @@
   <translation type="gettext">papers</translation>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="51~alpha" type="development" date="2026-07-04">
+      <description>
+        <p>Papers has seen numerous improvements and bug fixes over the course of the last six months:</p>
+        <ul>
+          <li>Adjust symbolic stroke icons to be compatible with GTK >= 4.22</li>
+          <li>Add missing tooltips in annotations toolbar</li>
+          <li>Default settings: don't allow documents to change zoom level by default</li>
+          <li>Center free text annotations on insertion</li>
+          <li>Correctly detect some checkboxes</li>
+          <li>Save and restore window size and maximized state in the previewer</li>
+          <li>Rename "Creator" and "Producer" PDF metadata properties fields labels to make them clearer</li>
+          <li>Improve layout for multiple signatures in properties dialog</li>
+          <li>Don't link buttons in document properties</li>
+          <li>Free text annotations improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="50.0" type="stable" date="2026-03-13">
       <description>
         <p>Since the last stable release, we can highlight the following changes:</p>

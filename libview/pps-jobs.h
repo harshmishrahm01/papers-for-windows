@@ -213,7 +213,7 @@ GList *pps_job_annots_get_annots (PpsJobAnnots *job);
 
 /* PpsJobRenderTexture */
 PPS_PUBLIC
-GType pps_job_render_texture_get_type (void) G_GNUC_CONST;
+GType pps_job_render_texture_get_type (void);
 PPS_PUBLIC
 PpsJob *pps_job_render_texture_new (PpsDocument *document,
                                     gint page,
@@ -231,7 +231,7 @@ void pps_job_render_texture_set_selection_info (PpsJobRenderTexture *job,
 
 /* PpsJobPageData */
 PPS_PUBLIC
-GType pps_job_page_data_get_type (void) G_GNUC_CONST;
+GType pps_job_page_data_get_type (void);
 PPS_PUBLIC
 PpsJob *pps_job_page_data_new (PpsDocument *document,
                                gint page,
@@ -310,7 +310,7 @@ const gchar *pps_job_save_get_uri (PpsJobSave *job_save);
 
 /* PpsJobFind */
 PPS_PUBLIC
-GType pps_job_find_get_type (void) G_GNUC_CONST;
+GType pps_job_find_get_type (void);
 PPS_PUBLIC
 PpsJob *pps_job_find_new (PpsDocument *document,
                           gint start_page,

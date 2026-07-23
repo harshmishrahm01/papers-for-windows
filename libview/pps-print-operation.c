@@ -363,7 +363,7 @@ pps_print_operation_update_status (PpsPrintOperation *op,
 typedef struct _PpsPrintOperationExport PpsPrintOperationExport;
 typedef struct _PpsPrintOperationExportClass PpsPrintOperationExportClass;
 
-static GType pps_print_operation_export_get_type (void) G_GNUC_CONST;
+static GType pps_print_operation_export_get_type (void);
 
 static void pps_print_operation_export_begin (PpsPrintOperationExport *export);
 static gboolean export_print_page (PpsPrintOperationExport *export);
@@ -1457,7 +1457,7 @@ pps_print_operation_export_class_init (PpsPrintOperationExportClass *klass)
 typedef struct _PpsPrintOperationPrint PpsPrintOperationPrint;
 typedef struct _PpsPrintOperationPrintClass PpsPrintOperationPrintClass;
 
-static GType pps_print_operation_print_get_type (void) G_GNUC_CONST;
+static GType pps_print_operation_print_get_type (void);
 
 typedef enum {
 	PPS_SCALE_NONE,

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: evince\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/papers/issues/\n"
-"POT-Creation-Date: 2026-06-25 07:49+0000\n"
-"PO-Revision-Date: 2026-07-03 17:02+0200\n"
+"POT-Creation-Date: 2026-07-07 07:03+0000\n"
+"PO-Revision-Date: 2026-07-14 22:53+0200\n"
 "Last-Translator: Victoria Niedzielska <victorian@gnome.org>\n"
 "Language-Team: Polish <https://l10n.gnome.org/teams/pl/>\n"
 "Language: pl\n"
@@ -656,51 +656,51 @@ msgstr "Kiedy jest włączone, wokół każdej strony będzie rysowana ramka."
 msgid "Page Handling"
 msgstr "Obsługa stron"
 
-#: libview/pps-view.c:2135
+#: libview/pps-view.c:2138
 msgid "Go to first page"
 msgstr "Przejdź do pierwszej strony"
 
-#: libview/pps-view.c:2137
+#: libview/pps-view.c:2140
 msgid "Go to previous page"
 msgstr "Przejdź do poprzedniej strony"
 
-#: libview/pps-view.c:2139
+#: libview/pps-view.c:2142
 msgid "Go to next page"
 msgstr "Przejdź do następnej strony"
 
-#: libview/pps-view.c:2141
+#: libview/pps-view.c:2144
 msgid "Go to last page"
 msgstr "Przejdź do ostatniej strony"
 
-#: libview/pps-view.c:2143
+#: libview/pps-view.c:2146
 msgid "Go to page"
 msgstr "Przejdź do strony"
 
-#: libview/pps-view.c:2145
+#: libview/pps-view.c:2148
 msgid "Find"
 msgstr "Znajdź"
 
-#: libview/pps-view.c:2174
+#: libview/pps-view.c:2177
 #, c-format
 msgid "Go to page %s"
 msgstr "Przejdź do %s. strony"
 
-#: libview/pps-view.c:2180
+#: libview/pps-view.c:2183
 #, c-format
 msgid "Go to %s on file “%s”"
 msgstr "Przejdź do %s z pliku „%s”"
 
-#: libview/pps-view.c:2183
+#: libview/pps-view.c:2186
 #, c-format
 msgid "Go to file “%s”"
 msgstr "Przejdź do pliku „%s”"
 
-#: libview/pps-view.c:2191
+#: libview/pps-view.c:2194
 #, c-format
 msgid "Launch %s"
 msgstr "Uruchom „%s”"
 
-#: libview/pps-view.c:2198
+#: libview/pps-view.c:2201
 #, c-format
 msgid "Reset form"
 msgstr "Przywróć formularz"
@@ -1139,7 +1139,7 @@ msgstr "_Pomoc"
 
 #: shell/resources/pps-document-view.blp:822 shell/resources/pps-window.blp:155
 msgid "_About Document Viewer"
-msgstr "_O programie"
+msgstr "_O aplikacji"
 
 #: shell/resources/pps-document-view.blp:831
 msgid "_Print…"
@@ -1882,15 +1882,15 @@ msgstr "CEL"
 
 #: shell/src/application.rs:423
 msgid "Run papers in fullscreen mode."
-msgstr "Uruchamia program w trybie pełnoekranowym."
+msgstr "Uruchamia aplikację w trybie pełnoekranowym."
 
 #: shell/src/application.rs:432
 msgid "Run papers in presentation mode."
-msgstr "Uruchamia program w trybie prezentacji."
+msgstr "Uruchamia aplikację w trybie prezentacji."
 
 #: shell/src/application.rs:441
 msgid "Show the version of the program."
-msgstr "Pokazuje wersję programu."
+msgstr "Wyświetla wersję programu."
 
 #: shell/src/application.rs:451
 msgid "[FILE…]"
@@ -2094,18 +2094,3 @@ msgstr "Zawartość"
 #: shell/src/properties_general.rs:314
 msgid "Date &amp; Time"
 msgstr "Data i godzina"
-
-#~ msgid "Producer"
-#~ msgstr "Aplikacja użyta do konwersji"
-
-#~ msgid "Creator"
-#~ msgstr "Aplikacja użyta do stworzenia"
-
-#~ msgid "Signature Information"
-#~ msgstr "Informacje o podpisie"
-
-#~ msgid "View Details…"
-#~ msgstr "Wyświetl szczegóły…"
-
-#~ msgid "Hide Details…"
-#~ msgstr "Ukryj szczegóły…"

@@ -42,7 +42,26 @@ char *djvu_text_page_copy (DjvuTextPage *page,
                            PpsRectangle *rectangle);
 void djvu_text_page_index_text (DjvuTextPage *page,
                                 gboolean case_sensitive);
+gboolean djvu_text_page_get_text_layout (DjvuTextPage *page,
+                                         gdouble height,
+                                         gdouble dpi,
+                                         PpsRectangle **areas,
+                                         guint *n_areas);
 void djvu_text_page_search (DjvuTextPage *page,
                             const char *text);
 DjvuTextPage *djvu_text_page_new (miniexp_t text);
 void djvu_text_page_free (DjvuTextPage *page);
+
+static inline void
+djvu_doc_to_page_rect (PpsRectangle *dest,
+                       const PpsRectangle *source,
+                       gdouble height,
+                       gdouble dpi)
+{
+	gdouble tmp = source->y1;
+
+	dest->x1 = source->x1 * 72.0 / dpi;
+	dest->x2 = source->x2 * 72.0 / dpi;
+	dest->y1 = height - source->y2 * 72.0 / dpi;
+	dest->y2 = height - tmp * 72.0 / dpi;
+}

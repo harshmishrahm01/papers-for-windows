@@ -1,3 +1,59 @@
+Papers 51.alpha
+---------------
+
+* Bug fixes:
+  - Fix build with latest gtk versions (Jordan Petridis)
+  - Adjust symbolic stroke icons to be compatible with GTK >= 4.22 (balooii)
+  - Add missing tooltips in annotations toolbar (Lukáš Tyrychtr)
+  - Default settings: don't allow documents to change zoom level by default (Lucas Baudin)
+  - Center free text annotations on insertion (Lucas Baudin)
+  - #656 Correctly detect some checkboxes (Lucas Baudin)
+  - #640 Save and restore window size and maximized state in the previewer (sajal)
+  - Improved AppData keywords (Jeff Fortin)
+  - #324 Rename "Creator" and "Producer" PDF metadata properties fields labels to make them clearer (Lucas Baudin)
+  - #527, #609 Improve layout for multiple signatures in properties dialog (Philipp Klein, rukysandy)
+  - #631 Don't link buttons in document properties (omprakash choudhary)
+  - #603 Free text annotations improvements (Rakesh)
+
+* Bug fixes already released in the 50.x serie:
+  - #610 PDF link jumps are off target for some files (Nelson Ben)
+  - #597 Scrolling stalls image loading for image-heavy PDFs and CBZs with fractional scaling enabled (balooii)
+  - #340 Pinch to zoom sometimes causes huge page jumps (balooii)
+  - #642 Text jitter on fractional scaling (balooii)
+  - #685 Pencil size icons look broken (balooii)
+  - !764 shell: escape link arguments before spawning a new process, related to CVE-2026-46529 of Evince (Lucas Baudin)
+  - !766 build: Include gdk.h instead of gdkkeysyms.h (Jordan Petridis)
+  - !760 Fix null pointer dereference in PpsPrintOperationPrint (Casey)
+  - !754 Chain up constructed vfuncs (Maximiliano)
+  - !739 shell: Fix crash when navigating empty search results (Lennard Hofmann)
+  - !718 libview: Correct zoom in odd left dual page mode (Colin Kinloch)
+  - #655 text annotation displayed in wrong colors (Nelson Ben)
+  - #632 Scrolling in presentation mode skips pages (Qiu Wenbo)
+  - !747 libview: Fix tool not pointing towards the ink in annotation cursor (Alessandro Astone)
+  - !748 shell: save load job and handler id when reloading (Lucas Baudin)
+  - !746 fix several criticals for the previewer (Lucas Baudin)
+  - #669 libview: fix free text annotations position on insertion (Lucas Baudin)
+  - #656 libview: fix detection of some form checkboxes (Lucas Baudin)
+
+* Translation updates:
+  - Belarusian (Vasil Pupkin)
+  - Dutch (Nathan Follens)
+  - French (rene-coty)
+  - German (Christian Kirbach)
+  - Italian (Davide Ferracin)
+  - Norwegian Bokmål (Kjartan Maraas)
+  - Occitan (Quentin PAGÈS)
+  - Polish (Victoria Niedzielska, Daniel)
+  - Persian (Danial Behzadi)
+  - Romanian (Antonio Marin)
+  - Servian (Марко М. Костић)
+  - Slovak (Jose Riha)
+  - Slovenian (Martin S.)
+  - Thai (Aefgh Threenine)
+  - Turkish (emintufan)
+  - Vietnamese (Cas Pascal)
+
+
 Papers 50
 --------------
 * Bug fixes:

@@ -224,7 +224,7 @@ typedef struct {
 } PpsInkList;
 
 PPS_PUBLIC
-GType pps_path_get_type (void) G_GNUC_CONST;
+GType pps_path_get_type (void);
 PPS_PUBLIC
 PpsPath *pps_path_new_for_list (GSList *points);
 PPS_PUBLIC
@@ -242,7 +242,7 @@ pps_path_copy_array (PpsPath *path, gsize *n_points);
 
 #define PPS_TYPE_INK_LIST (pps_ink_list_get_type ())
 PPS_PUBLIC
-GType pps_ink_list_get_type (void) G_GNUC_CONST;
+GType pps_ink_list_get_type (void);
 PPS_PUBLIC
 PpsInkList *pps_ink_list_new_for_list (GSList *paths);
 PPS_PUBLIC
@@ -262,7 +262,7 @@ typedef struct {
 } PpsInkTime;
 #define PPS_TYPE_INK_TIME (pps_ink_time_get_type ())
 PPS_PUBLIC
-GType pps_ink_time_get_type (void) G_GNUC_CONST;
+GType pps_ink_time_get_type (void);
 PPS_PUBLIC
 PpsInkTime *
 pps_ink_time_copy (const PpsInkTime *t);

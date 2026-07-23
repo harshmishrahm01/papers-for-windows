@@ -896,10 +896,16 @@ pps_annotations_context_get_annot_at_doc_point (PpsAnnotationsContext *self,
 	g_return_val_if_fail (doc_point, NULL);
 
 	PpsAnnotationsContextPrivate *priv = GET_PRIVATE (self);
-	PpsDocumentAnnotations *document = PPS_DOCUMENT_ANNOTATIONS (pps_document_model_get_document (priv->model));
+	PpsDocument *document_obj = pps_document_model_get_document (priv->model);
+	PpsDocumentAnnotations *document;
 	GListModel *model = G_LIST_MODEL (priv->annots_model);
 	PpsPoint point_on_page = doc_point->point_on_page;
 	PpsAnnotation *best;
+
+	if (!PPS_IS_DOCUMENT_ANNOTATIONS (document_obj))
+		return NULL;
+
+	document = PPS_DOCUMENT_ANNOTATIONS (document_obj);
 
 	best = NULL;
 	for (gint i = 0; i < g_list_model_get_n_items (model); i++) {

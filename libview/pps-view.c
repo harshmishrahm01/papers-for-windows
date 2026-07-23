@@ -65,7 +65,10 @@ enum {
 	PROP_HSCROLL_POLICY,
 	PROP_VSCROLL_POLICY,
 	PROP_CAN_ZOOM_IN,
-	PROP_CAN_ZOOM_OUT
+	PROP_CAN_ZOOM_OUT,
+	PROP_ANNOTATIONS_CONTEXT,
+	PROP_MODEL,
+	PROP_SEARCH_CONTEXT,
 };
 
 static guint signals[N_SIGNALS];
@@ -707,6 +710,8 @@ view_update_range_and_current_page (PpsView *view)
 			if (best_current_page >= 0 && priv->current_page != best_current_page) {
 				priv->current_page = best_current_page;
 				pps_document_model_set_page (priv->model, best_current_page);
+				if (!priv->caret_enabled)
+					priv->cursor_page = best_current_page;
 			}
 		}
 	} else if (is_dual_page (view, &odd_left)) {
@@ -5575,6 +5580,15 @@ pps_view_get_property (GObject *object,
 	case PROP_CAN_ZOOM_OUT:
 		g_value_set_boolean (value, priv->can_zoom_out);
 		break;
+	case PROP_ANNOTATIONS_CONTEXT:
+		g_value_set_object (value, priv->annots_context);
+		break;
+	case PROP_MODEL:
+		g_value_set_object (value, priv->model);
+		break;
+	case PROP_SEARCH_CONTEXT:
+		g_value_set_object (value, priv->search_context);
+		break;
 	case PROP_HADJUSTMENT:
 		g_value_set_object (value, priv->hadjustment);
 		break;
@@ -5603,6 +5617,15 @@ pps_view_set_property (GObject *object,
 	PpsViewPrivate *priv = GET_PRIVATE (view);
 
 	switch (prop_id) {
+	case PROP_ANNOTATIONS_CONTEXT:
+		pps_view_set_annotations_context (view, (PpsAnnotationsContext *) g_value_get_object (value));
+		break;
+	case PROP_MODEL:
+		pps_view_set_model (view, (PpsDocumentModel *) g_value_get_object (value));
+		break;
+	case PROP_SEARCH_CONTEXT:
+		pps_view_set_search_context (view, (PpsSearchContext *) g_value_get_object (value));
+		break;
 	case PROP_HADJUSTMENT:
 		pps_view_set_scroll_adjustment (view, GTK_ORIENTATION_HORIZONTAL,
 		                                (GtkAdjustment *) g_value_get_object (value));
@@ -5762,9 +5785,6 @@ pps_view_focus (GtkWidget *widget,
 		if (has_focus) {
 			if (!cursor_go_to_next_page (view))
 				return FALSE;
-		} else {
-			if (!cursor_go_to_document_start (view))
-				return FALSE;
 		}
 		break;
 	case GTK_DIR_TAB_BACKWARD:
@@ -5772,12 +5792,9 @@ pps_view_focus (GtkWidget *widget,
 		if (has_focus) {
 			if (!cursor_go_to_previous_page (view))
 				return FALSE;
-		} else {
-			if (!cursor_go_to_document_end (view))
-				return FALSE;
-		}
 
-		cursor_go_to_page_start (view);
+			cursor_go_to_page_start (view);
+		}
 		break;
 	default:
 		g_assert_not_reached ();
@@ -5932,6 +5949,42 @@ pps_view_class_init (PpsViewClass *class)
 	                                                       TRUE,
 	                                                       G_PARAM_READABLE |
 	                                                           G_PARAM_STATIC_STRINGS));
+
+	/**
+	 * PpsView:annotations-context:
+	 */
+	g_object_class_install_property (object_class,
+	                                 PROP_ANNOTATIONS_CONTEXT,
+	                                 g_param_spec_object ("annotations-context",
+	                                                      "Annotations Context",
+	                                                      "The view's current annotation context",
+	                                                      PPS_TYPE_ANNOTATIONS_CONTEXT,
+	                                                      G_PARAM_READWRITE |
+	                                                          G_PARAM_STATIC_STRINGS));
+
+	/**
+	 * PpsView:model:
+	 */
+	g_object_class_install_property (object_class,
+	                                 PROP_MODEL,
+	                                 g_param_spec_object ("model",
+	                                                      "View model",
+	                                                      "The view's current model",
+	                                                      PPS_TYPE_DOCUMENT_MODEL,
+	                                                      G_PARAM_READWRITE |
+	                                                          G_PARAM_STATIC_STRINGS));
+
+	/**
+	 * PpsView:search-context:
+	 */
+	g_object_class_install_property (object_class,
+	                                 PROP_SEARCH_CONTEXT,
+	                                 g_param_spec_object ("search-context",
+	                                                      "View search context",
+	                                                      "The view's current search context",
+	                                                      PPS_TYPE_SEARCH_CONTEXT,
+	                                                      G_PARAM_READWRITE |
+	                                                          G_PARAM_STATIC_STRINGS));
 
 	/* Scrollable interface */
 	g_object_class_override_property (object_class, PROP_HADJUSTMENT, "hadjustment");

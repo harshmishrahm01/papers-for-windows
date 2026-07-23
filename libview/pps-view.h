@@ -55,7 +55,7 @@ typedef struct {
 } PpsViewSelection;
 
 PPS_PUBLIC
-GType pps_view_selection_get_type (void) G_GNUC_CONST;
+GType pps_view_selection_get_type (void);
 PPS_PUBLIC
 PpsViewSelection *pps_view_selection_copy (PpsViewSelection *selection);
 PPS_PUBLIC

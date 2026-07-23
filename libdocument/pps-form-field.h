@@ -162,32 +162,32 @@ struct _PpsFormFieldSignatureClass {
 
 /* PpsFormField base class */
 PPS_PUBLIC
-GType pps_form_field_get_type (void) G_GNUC_CONST;
+GType pps_form_field_get_type (void);
 
 /* PpsFormFieldText */
 PPS_PUBLIC
-GType pps_form_field_text_get_type (void) G_GNUC_CONST;
+GType pps_form_field_text_get_type (void);
 PPS_PUBLIC
 PpsFormField *pps_form_field_text_new (gint id,
                                        PpsFormFieldTextType type);
 
 /* PpsFormFieldButton */
 PPS_PUBLIC
-GType pps_form_field_button_get_type (void) G_GNUC_CONST;
+GType pps_form_field_button_get_type (void);
 PPS_PUBLIC
 PpsFormField *pps_form_field_button_new (gint id,
                                          PpsFormFieldButtonType type);
 
 /* PpsFormFieldChoice */
 PPS_PUBLIC
-GType pps_form_field_choice_get_type (void) G_GNUC_CONST;
+GType pps_form_field_choice_get_type (void);
 PPS_PUBLIC
 PpsFormField *pps_form_field_choice_new (gint id,
                                          PpsFormFieldChoiceType type);
 
 /* PpsFormFieldSignature */
 PPS_PUBLIC
-GType pps_form_field_signature_get_type (void) G_GNUC_CONST;
+GType pps_form_field_signature_get_type (void);
 PPS_PUBLIC
 PpsFormField *pps_form_field_signature_new (gint id);
 

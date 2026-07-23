@@ -29,7 +29,7 @@ struct _PpsAttachmentClass {
 };
 
 PPS_PUBLIC
-GQuark pps_attachment_error_quark (void) G_GNUC_CONST;
+GQuark pps_attachment_error_quark (void);
 
 PPS_PUBLIC
 PpsAttachment *pps_attachment_new (const gchar *name,
