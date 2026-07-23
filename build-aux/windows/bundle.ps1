@@ -61,10 +61,22 @@ foreach ($line in $lddOutput) {
 }
 
 Write-Host "Copying UI assets, MIME database, and GdkPixbuf loaders..." -ForegroundColor Cyan
-Copy-Item -Path (Join-Path $ucrtShare "icons\Adwaita") -Destination $iconsDir -Recurse -Container -Force
-Copy-Item -Path (Join-Path $ucrtShare "icons\hicolor") -Destination $iconsDir -Recurse -Container -Force
-Copy-Item -Path (Join-Path $ucrtShare "mime") -Destination (Join-Path $distDir "share") -Recurse -Container -Force
-Copy-Item -Path (Join-Path $ucrtLib "gdk-pixbuf-2.0\*") -Destination $pixbufDir -Recurse -Container -Force
+$adwaitaPath = Join-Path $ucrtShare "icons\Adwaita"
+if (Test-Path $adwaitaPath) {
+    Copy-Item -Path $adwaitaPath -Destination $iconsDir -Recurse -Container -Force
+}
+$hicolorPath = Join-Path $ucrtShare "icons\hicolor"
+if (Test-Path $hicolorPath) {
+    Copy-Item -Path $hicolorPath -Destination $iconsDir -Recurse -Container -Force
+}
+$mimePath = Join-Path $ucrtShare "mime"
+if (Test-Path $mimePath) {
+    Copy-Item -Path $mimePath -Destination (Join-Path $distDir "share") -Recurse -Container -Force
+}
+$pixbufPath = Join-Path $ucrtLib "gdk-pixbuf-2.0"
+if (Test-Path $pixbufPath) {
+    Copy-Item -Path "$pixbufPath\*" -Destination $pixbufDir -Recurse -Container -Force
+}
 
 Write-Host ""
 Write-Host "==========================================================" -ForegroundColor Green

@@ -160,6 +160,8 @@ $packages = @(
     "mingw-w64-ucrt-x86_64-libtiff",
     "mingw-w64-ucrt-x86_64-pkgconf",
     "mingw-w64-ucrt-x86_64-blueprint-compiler",
+    "mingw-w64-ucrt-x86_64-adwaita-icon-theme",
+    "mingw-w64-ucrt-x86_64-hicolor-icon-theme",
     "diffutils"
 )
 
